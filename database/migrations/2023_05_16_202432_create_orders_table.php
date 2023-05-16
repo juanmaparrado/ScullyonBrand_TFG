@@ -12,7 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('orders', function (Blueprint $table) {
-            $table->id();
+            $table->id()->autoIncrement();
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->enum('status', ['processing', 'shipping', 'completed', 'declined', 'cancelled']);
+            $table->enum('payment_method', ['credit_card', 'paypal']);
+            $table->double('total');
+            $table->string('adress');
+            $table->string('city');
             $table->timestamps();
         });
     }

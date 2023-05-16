@@ -12,7 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('inventories', function (Blueprint $table) {
-            $table->id();
+            $table->unsignedBigInteger('store_id');            
+            $table->foreign('store_id')->references('id')->on('stores')->onDelete('cascade');
+            $table->primary(['store_id']);
+            $table->unsignedBigInteger('product_id');
+            $table->foreign('product_id')->references('id')->on('products');
+            $table->enum('status', ['available', 'unavailable']);
             $table->timestamps();
         });
     }
