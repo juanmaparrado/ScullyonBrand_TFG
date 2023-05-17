@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('inventories', function (Blueprint $table) {
             $table->unsignedBigInteger('store_id');            
             $table->foreign('store_id')->references('id')->on('stores')->onDelete('cascade');
-            $table->primary(['store_id']);
             $table->unsignedBigInteger('product_id');
             $table->foreign('product_id')->references('id')->on('products');
             $table->enum('status', ['available', 'unavailable']);

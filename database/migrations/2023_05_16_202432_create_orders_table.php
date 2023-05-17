@@ -18,7 +18,7 @@ return new class extends Migration
             $table->enum('status', ['processing', 'shipping', 'completed', 'declined', 'cancelled']);
             $table->enum('payment_method', ['credit_card', 'paypal']);
             $table->double('total');
-            $table->string('adress');
+            $table->string('address');
             $table->string('city');
             $table->timestamps();
         });
