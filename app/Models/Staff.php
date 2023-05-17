@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Staff extends Model
 {
     use HasFactory;
+    protected $fillable = ['name', 'address', 'email', 'salary', 'bank_account', 'store_id'];
+
+    public function store()
+    {
+        return $this->belongsTo(Store::class);
+    }
 }
