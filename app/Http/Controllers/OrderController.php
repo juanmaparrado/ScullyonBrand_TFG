@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\Models\Order;
@@ -7,59 +6,61 @@ use Illuminate\Http\Request;
 
 class OrderController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        // Obtener una lista de todos los pedidos con los datos del usuario
+        $orders = Order::with('user')->get();
+        return view('orders.index', compact('orders'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        // Crear un nuevo pedido y asociarlo al usuario
+        $data = $request->validate([
+            'user_id' => 'required|exists:users,id',
+            'status' => 'required|in:processing,shipping,completed,declined,cancelled',
+            'payment_method' => 'required|in:credit_card,paypal',
+            'total' => 'required|numeric',
+            'address' => 'required|string',
+            'city' => 'required|string',
+        ]);
+
+        $order = Order::create($data);
+
+        return redirect()->route('orders.show', $order->id);
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Order $order)
+    public function show($id)
     {
-        //
+        $order = Order::with('user', 'orderItems.product')->findOrFail($id);
+        
+        return view('orders.show', compact('order'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Order $order)
+    public function update(Request $request, $id)
     {
-        //
+        // Actualizar un pedido específico por su ID
+        $data = $request->validate([
+            'user_id' => 'exists:users,id',
+            'status' => 'in:processing,shipping,completed,declined,cancelled',
+            'payment_method' => 'in:credit_card,paypal',
+            'total' => 'numeric',
+            'address' => 'string',
+            'city' => 'string',
+        ]);
+
+        $order = Order::findOrFail($id);
+        $order->update($data);
+
+        return redirect()->route('orders.show', $order->id);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Order $order)
+    public function destroy($id)
     {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Order $order)
-    {
-        //
+        // Eliminar un pedido específico por su ID
+        $order = Order::findOrFail($id);
+        $order->delete();
+        return redirect()->route('orders.index');
     }
 }
+
