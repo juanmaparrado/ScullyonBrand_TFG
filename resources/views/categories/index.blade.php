@@ -3,6 +3,7 @@
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Categories') }}
         </h2>
+        <a href="{{ route('categories.create') }}" class="btn btn-primary">Create Category</a>
     </x-slot>
 
     <div class="py-12">
@@ -13,7 +14,7 @@
                         <thead class="bg-gray-50">
                             <tr>
                                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                    ID
+                                    Nº Products
                                 </th>
                                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                     Name
@@ -27,7 +28,7 @@
                             @foreach ($categories as $category)
                                 <tr>
                                     <td class="px-6 py-4 whitespace-nowrap">
-                                        {{ $category->id }}
+                                        {{ $category->products->count() }}
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap">
                                         {{ $category->name }}
