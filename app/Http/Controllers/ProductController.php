@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Product;
 use App\Models\Category;
+use App\Models\Review;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -63,4 +65,22 @@ class ProductController extends Controller
 
         return redirect()->route('products.index')->with('success', 'Product deleted successfully.');
     }
+
+    public function showReviews($productId)
+    {
+        $product = Product::findOrFail($productId);
+        $reviews = Review::where('product_id', $productId)->get();
+
+        $reviewsWithUser = $reviews->map(function ($review) {
+            $user = User::findOrFail($review->user_id);
+            $review->user_name = $user->name;
+            return $review;
+        });
+
+        return view('products.reviews', [
+            'product' => $product,
+            'reviews' => $reviewsWithUser,
+        ]);
+    }
+
 }

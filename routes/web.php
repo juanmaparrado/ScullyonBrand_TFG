@@ -33,6 +33,7 @@ Route::middleware('auth')->group(function () {
 
 Route::resource('categories', CategoryController::class);
 Route::resource('products', ProductController::class);
+Route::get('products/{product}/reviews', [ProductController::class, 'showReviews'])->name('products.reviews');
 Route::resource('orders', OrderController::class);
 
 require __DIR__.'/auth.php';

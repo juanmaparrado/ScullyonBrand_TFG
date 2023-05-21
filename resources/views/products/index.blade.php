@@ -10,7 +10,6 @@
                 <table class="min-w-full divide-y divide-gray-200">
                     <thead class="bg-gray-50">
                         <tr>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">ID</th>
                             <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
                             <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Price</th>
                             <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Stock</th>
@@ -20,16 +19,18 @@
                     <tbody class="bg-white divide-y divide-gray-200">
                         @foreach ($products as $product)
                             <tr>
-                                <td class="px-6 py-4 whitespace-nowrap">{{ $product->id }}</td>
                                 <td class="px-6 py-4 whitespace-nowrap">{{ $product->name }}</td>
                                 <td class="px-6 py-4 whitespace-nowrap">{{ $product->price }}</td>
                                 <td class="px-6 py-4 whitespace-nowrap">{{ $product->stock }}</td>
+                                <td class="px-6 py-4 whitespace-nowrap"><a href="{{ route('products.reviews', $product->id) }}">Ver reviews</a></td>
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                    <a href="{{ route('products.edit', $product->id) }}" class="btn btn-primary">Edit</a>
-                                    <form action="{{ route('products.destroy', $product->id) }}" method="POST" class="inline">
+                                    <x-primary-button><a  href="{{ route('products.edit', $product->id) }}">Edit</a></x-primary-button>
+                                   <form action="{{ route('products.destroy', $product->id) }}" method="POST" class="inline">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                        <x-danger-button>
+                                                Delete
+                                        </x-danger-button>
                                     </form>
                                 </td>
                             </tr>

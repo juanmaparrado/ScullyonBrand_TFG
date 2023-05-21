@@ -19,4 +19,14 @@ class Order extends Model
     {
         return $this->hasMany(OrderItem::class);
     }
+    public function getTotalAttribute()
+    {
+        $total = 0;
+
+        foreach ($this->orderItems as $orderItem) {
+            $total += $orderItem->price * $orderItem->quantity;
+        }
+
+        return $total;
+    }
 }
