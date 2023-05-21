@@ -18,11 +18,15 @@
                     </thead>
                     <tbody class="bg-white divide-y divide-gray-200">
                         @foreach ($products as $product)
-                            <tr>
+                            <td>
                                 <td class="px-6 py-4 whitespace-nowrap">{{ $product->name }}</td>
                                 <td class="px-6 py-4 whitespace-nowrap">{{ $product->price }}</td>
                                 <td class="px-6 py-4 whitespace-nowrap">{{ $product->stock }}</td>
-                                <td class="px-6 py-4 whitespace-nowrap"><a href="{{ route('products.reviews', $product->id) }}">Ver reviews</a></td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                @if ($product->reviews->count() > 0)
+                                <a href="{{ route('products.reviews', $product->id) }}">Ver reviews</a></td>
+                                @endif
+                                </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
                                     <x-primary-button><a  href="{{ route('products.edit', $product->id) }}">Edit</a></x-primary-button>
                                    <form action="{{ route('products.destroy', $product->id) }}" method="POST" class="inline">
