@@ -21,6 +21,7 @@ Tendremos un control de acceso de usuarios,staff y administradores.Cada una de e
 <img src="https://laravel.com/assets/img/components/logo-laravel.svg" alt="Laravel Logo" width="50"/><img src="https://seeklogo.com/images/T/tailwind-css-logo-5AD4175897-seeklogo.com.png" alt="Tailwind CSS Logo" width="50"/><img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg" alt="JavaScript Logo" width="50"/>
 
 
-
+## Diseñor E/R
+(https://github.com/juanmaparrado/ScullyonBrand_TFG/blob/631c4dba12abb9bc0e9da41a29388caa62637db7/Modelo%20E-R.png)
 Usuario de prueba : juanma@example.com contraseña: juanma123
 
