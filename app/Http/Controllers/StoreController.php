@@ -7,59 +7,72 @@ use Illuminate\Http\Request;
 
 class StoreController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        $stores = Store::all();
+
+        return view('stores.index', compact('stores'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        return view('stores.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required|string',
+            'address' => 'required|string',
+            'city' => 'required|string',
+            'phone' => 'required|string',
+        ]);
+
+        $store = Store::create($validatedData);
+
+        return redirect()->route('stores.index')
+            ->with('success', 'Store created successfully!');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Store $store)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(Store $store)
     {
-        //
+        return view('stores.edit', compact('store'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, Store $store)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required|string',
+            'address' => 'required|string',
+            'city' => 'required|string',
+            'phone' => 'required|string',
+        ]);
+
+        $store->update($validatedData);
+
+        return redirect()->route('stores.index')
+            ->with('success', 'Store updated successfully!');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Store $store)
     {
-        //
+        $store->delete();
+
+        return redirect()->route('stores.index')
+            ->with('success', 'Store deleted successfully!');
     }
+
+    public function staff(Store $store)
+    {
+        $staff = $store->staff; // Obtener los trabajadores de la tienda utilizando la relación
+
+        return view('stores.staff', compact('store', 'staff'));
+    }
+
+    public function inventory(Store $store)
+{
+    $inventory = $store->inventories;
+    return view('stores.inventory', compact('inventory'));
+}
+
 }
