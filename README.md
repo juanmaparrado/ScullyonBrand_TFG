@@ -22,6 +22,6 @@ Tendremos un control de acceso de usuarios,staff y administradores.Cada una de e
 
 
 ## Diseñor E/R
-[!Imagen del diseño de la base de datos](https://github.com/juanmaparrado/ScullyonBrand_TFG/blob/main/Modelo%20E-R.png)
+![Imagen del diseño de la base de datos](https://github.com/juanmaparrado/ScullyonBrand_TFG/blob/main/Modelo%20E-R.png)
 Usuario de prueba : juanma@example.com contraseña: juanma123
 
