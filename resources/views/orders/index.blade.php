@@ -1,8 +1,8 @@
 <x-app-layout>
 
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Lista de Pedidos') }}
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight text-center">
+            {{ __('Orders List') }}
         </h2>
     </x-slot>
 
@@ -13,7 +13,6 @@
                     <table class="min-w-full divide-y divide-gray-200">
                         <thead class="bg-gray-50">
                             <tr>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">ID</th>
                                 <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nombre del Usuario</th>
                                 <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Email del Usuario</th>
                                 <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Estado</th>
@@ -25,14 +24,15 @@
                         <tbody class="bg-white divide-y divide-gray-200">
                             @foreach ($orders as $order)
                                 <tr>
-                                    <td class="px-6 py-4 whitespace-nowrap">{{ $order->id }}</td>
                                     <td class="px-6 py-4 whitespace-nowrap">{{ $order->user->name }}</td>
                                     <td class="px-6 py-4 whitespace-nowrap">{{ $order->user->email }}</td>
                                     <td class="px-6 py-4 whitespace-nowrap">{{ $order->status }}</td>
                                     <td class="px-6 py-4 whitespace-nowrap">{{ $order->payment_method }}</td>
                                     <td class="px-6 py-4 whitespace-nowrap">{{ $order->total }}</td>
                                     <td class="px-6 py-4 whitespace-nowrap">
-                                        <a href="{{ route('orders.show', $order->id) }}" class="text-indigo-600 hover:text-indigo-900">Ver Detalles</a>
+                                        <x-primary-button>
+                                            <a href="{{ route('orders.show', $order->id) }}" >Ver Detalles</a>
+                                        </x-primary-button>
                                     </td>
                                 </tr>
                             @endforeach

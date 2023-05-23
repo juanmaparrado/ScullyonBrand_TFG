@@ -11,9 +11,6 @@
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                 <div class="p-6 sm:px-20 bg-white border-b border-gray-200">
                     <div class="mb-4">
-                        <span class="font-bold">ID:</span> {{ $order->id }}
-                    </div>
-                    <div class="mb-4">
                         <span class="font-bold">Nombre del Usuario:</span> {{ $order->user->name }}
                     </div>
                     <div class="mb-4">
@@ -44,7 +41,6 @@
                         <table class="min-w-full divide-y divide-gray-200">
                             <thead class="bg-gray-50">
                                 <tr>
-                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">ID</th>
                                     <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nombre del Producto</th>
                                     <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Cantidad</th>
                                     <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Precio</th>
@@ -54,7 +50,6 @@
                             <tbody class="bg-white divide-y divide-gray-200">
                                 @foreach ($order->orderItems as $orderItem)
                                     <tr>
-                                        <td class="px-6 py-4 whitespace-nowrap">{{ $orderItem->id }}</td>
                                         <td class="px-6 py-4 whitespace-nowrap">{{ $orderItem->product->name }}</td>
                                         <td class="px-6 py-4 whitespace-nowrap">{{ $orderItem->quantity }}</td>
                                         <td class="px-6 py-4 whitespace-nowrap">{{ $orderItem->price }}</td>

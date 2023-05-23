@@ -1,7 +1,8 @@
 <x-app-layout>
     <x-slot name="header">
-        <h1 class="text-2xl font-semibold">Store List</h1>
-        <a href="{{ route('stores.create') }}" class="btn btn-primary">Create Store</a>
+        <h1 class="text-2xl font-semibold text-center">Store List</h1>
+        <br>
+        <a href="{{ route('stores.create') }}" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Create Store</a>
     </x-slot>
 
     <div class="py-6">
@@ -15,7 +16,7 @@
                             <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">City</th>
                             <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Phone</th>
                             <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Staff</th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Inventory</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">StockTaking</th>
                             <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
                         </tr>
                     </thead>
@@ -33,15 +34,15 @@
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
                                     <x-primary-button>
-                                        <a href="{{ route('stores.inventory', $store->id) }}" class="text-green-500 hover:text-green-600 ml-4">View Inventory</a>
+                                        <a href="{{ route('stores.stocktaking', $store->id) }}" class="text-green-500 hover:text-green-600">View Inventory</a>
                                     </x-primary-button>
                                 <td class="px-6 py-4 whitespace-nowrap">
                                     <div class="flex">
-                                        <a href="{{ route('stores.edit', $store->id) }}" class="text-blue-500 hover:text-blue-600 ml-4">Edit</a>
+                                        <x-primary-button><a href="{{ route('stores.edit', $store->id) }}" class="text-blue-500">Edit</a></x-primary-button>
                                         <form action="{{ route('stores.destroy', $store->id) }}" method="POST" class="inline">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="text-red-500 hover:text-red-600 ml-4">Delete</button>
+                                            <x-danger-button type="submit" class="text-red-500 hover:text-red-600 ml-4">Delete</x-danger-button>
                                         </form>
                                     </div>
                                 </td>

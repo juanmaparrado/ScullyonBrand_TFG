@@ -1,9 +1,10 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight text-center">
             {{ __('Categories') }}
         </h2>
-        <a href="{{ route('categories.create') }}" class="btn btn-primary">Create Category</a>
+        <br>
+        <a href="{{ route('categories.create') }}" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Create Category</a>
     </x-slot>
 
     <div class="py-12">
@@ -35,11 +36,11 @@
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                         <div class="flex items-center space-x-2">
-                                            <a href="{{ route('categories.edit', $category) }}" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                                            <x-primary-button><a href="{{ route('categories.edit', $category) }}" class="">Edit</a></x-primary-button>
                                             <form action="{{ route('categories.destroy', $category) }}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit" class="text-red-600 hover:text-red-900">Delete</button>
+                                                <x-danger-button>Delete</x-danger-button>
                                             </form>
                                         </div>
                                     </td>

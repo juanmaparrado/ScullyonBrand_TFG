@@ -1,7 +1,8 @@
 <x-app-layout>
     <x-slot name="header">
-        <h1 class="text-2xl font-semibold">Product List</h1>
-        <a href="{{ route('products.create') }}" class="btn btn-primary">Create Product</a>
+        <h1 class="text-2xl font-semibold text-center">Product List</h1>
+        <br>
+        <a href="{{ route('products.create') }}" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Create Product</a>
     </x-slot>
 
     <div class="py-6">
@@ -25,7 +26,7 @@
                                 <td class="px-6 py-4 whitespace-nowrap">{{ $product->stock }}</td>
                                 <td class="px-6 py-4 whitespace-nowrap">
                                 @if ($product->reviews->count() > 0)
-                                <a href="{{ route('products.reviews', $product->id) }}">Ver reviews</a></td>
+                                <x-primary-button><a href="{{ route('products.reviews', $product->id) }}" class="text-green-500 hover:text-green-600">Ver reviews</a></x-primary-button></td>
                                 @endif
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">

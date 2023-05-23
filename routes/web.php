@@ -41,6 +41,6 @@ Route::resource('orders', OrderController::class);
 
 Route::resource('stores', StoreController::class);
 Route::get('stores/{store}/staff', [StoreController::class, 'staff'])->name('stores.staff');
-Route::get('/stores/{store}/inventory', [StoreController::class, 'inventory'])->name('stores.inventory');
+Route::get('/stores/{store}/stocktaking', [StoreController::class, 'stocktaking'])->name('stores.stocktaking');
 
 require __DIR__.'/auth.php';
