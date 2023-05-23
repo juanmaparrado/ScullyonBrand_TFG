@@ -21,7 +21,11 @@ Tendremos un control de acceso de usuarios,staff y administradores.Cada una de e
 <img src="https://laravel.com/assets/img/components/logo-laravel.svg" alt="Laravel Logo" width="50"/><img src="https://seeklogo.com/images/T/tailwind-css-logo-5AD4175897-seeklogo.com.png" alt="Tailwind CSS Logo" width="50"/><img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg" alt="JavaScript Logo" width="50"/>
 
 
-## Diseñor E/R
+## Diseño E/R
 ![Imagen del diseño de la base de datos](https://github.com/juanmaparrado/ScullyonBrand_TFG/blob/main/Modelo%20E-R.png)
+
+##Datos Seeder
+Los datos añadidos en las factorias son pruebas en este momento.
+
 Usuario de prueba : juanma@example.com contraseña: juanma123
 
