@@ -70,9 +70,9 @@ class StoreController extends Controller
     }
 
     public function inventory(Store $store)
-{
-    $inventory = $store->inventories;
-    return view('stores.inventory', compact('inventory'));
-}
+    {
+        $inventory = $store->inventories;
+        return view('stores.stocktaking', compact('inventory'));
+    }
 
 }

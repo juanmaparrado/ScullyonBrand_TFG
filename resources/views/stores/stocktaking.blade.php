@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-        <h1 class="text-2xl font-semibold">Inventory</h1>
+        <h1 class="text-2xl font-semibold">Stocktaking</h1>
     </x-slot>
 
     <div class="py-6">
@@ -12,6 +12,7 @@
                         <h2 class="text-lg font-semibold">{{ $item->product->name }}</h2>
                         <p class="text-gray-500 mb-2">{{ $item->product->description }}</p>
                         <p class="text-gray-700">{{ $item->product->price }}</p>
+                        <span class="text-sm text-gray-500">Stock: {{ $item->product->stock }}</span>
                         <span class="text-sm text-gray-500">Status: {{ $item->status }}</span>
                     </div>
                 @endforeach
