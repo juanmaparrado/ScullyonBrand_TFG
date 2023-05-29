@@ -7,6 +7,7 @@ use App\Models\Product;
 use App\Models\Order;
 use App\Models\Store;
 use App\Models\Review;
+use App\Models\User;
 
 class DashboardController extends Controller
 {
@@ -35,7 +36,8 @@ class DashboardController extends Controller
 
         // Obtener el número de pedidos completados
         $completedOrders = Order::where('status', 'completed')->count();
+        $totalUsers = User::count();
 
-        return view('dashboard', compact('topProducts', 'totalRevenue', 'storesWithLowInventory', 'topReviewedProducts', 'completedOrders'));
+        return view('dashboard', compact('topProducts', 'totalRevenue', 'storesWithLowInventory', 'topReviewedProducts', 'completedOrders', 'totalUsers'));
     }
 }

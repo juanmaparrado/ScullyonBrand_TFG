@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('address');
             $table->string('email')->unique();
+            $table->string('password');
             $table->integer('salary');
             $table->string('bank_account');
             $table->unsignedBigInteger('store_id');
