@@ -1,8 +1,12 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h1 class="text-2xl font-semibold">Stocktaking</h1>
-    </x-slot>
+@extends('adminlte::page')
+@section('title', 'Dashboard')
 
+@section('content_header') 
+    <h1 class="text-2xl font-semibold text-center">Stocktaking</h1>
+@stop
+
+@section('content')
+<x-app-layout>
     <div class="py-6">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
@@ -20,7 +24,7 @@
         </div>
     </div>
 </x-app-layout>
-
+@stop
 
 
 

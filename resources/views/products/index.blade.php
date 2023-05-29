@@ -1,10 +1,15 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h1 class="text-2xl font-semibold text-center">Product List</h1>
-        <br>
-        <a href="{{ route('products.create') }}" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Create Product</a>
-    </x-slot>
+@extends('adminlte::page')
+@section('title', 'Dashboard')
 
+@section('content_header') 
+    <h1 class="text-2xl font-semibold text-center">Product List</h1>
+@stop
+
+@section('content')
+<div style="display: grid; place-items: center;">
+    <a href="{{ route('products.create') }}" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded ">Create Product</a>
+</div>
+<x-app-layout>
     <div class="py-6">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
@@ -47,5 +52,5 @@
         </div>
     </div>
 </x-app-layout>
-
+@stop
 
