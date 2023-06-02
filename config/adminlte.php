@@ -107,7 +107,7 @@ return [
     */
 
     'preloader' => [
-        'enabled' => false,
+        'enabled' => true,
         'img' => [
             'alt' => 'SCULLYON ADMIN',
             'effect' => 'animation__shake',

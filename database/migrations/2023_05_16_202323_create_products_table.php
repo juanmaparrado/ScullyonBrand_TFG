@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id()->autoIncrement();
             $table->string('name');
-            $table->double('price');
+            $table->float('price');
             $table->integer('stock');
             $table->string('url_image')->nullable();
             $table->unsignedBigInteger('category_id')->nullable(); // FK

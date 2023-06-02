@@ -21,7 +21,7 @@
 
                     <div class="mb-4">
                         <label for="price" class="block text-sm font-medium text-gray-700">Price</label>
-                        <input type="number" name="price" id="price" class="form-input mt-1 block w-full" value="{{ $product->price }}" required>
+                        <input type="text" name="price" id="price" class="form-input mt-1 block w-full" value="{{ $product->price }}">
                     </div>
 
                     <div class="mb-4">

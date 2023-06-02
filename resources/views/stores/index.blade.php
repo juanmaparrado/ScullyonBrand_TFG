@@ -33,14 +33,18 @@
                                 <td class="px-6 py-4 whitespace-nowrap">{{ $store->city }}</td>
                                 <td class="px-6 py-4 whitespace-nowrap">{{ $store->phone }}</td>
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                    <x-primary-button>
-                                        <a href="{{ route('stores.staff', $store->id) }}">View Staff</a>
-                                    </x-primary-button>
+                                    <a href="{{ route('stores.staff', $store->id) }}">
+                                        <x-primary-button>
+                                            View Staff
+                                        </x-primary-button>
+                                    </a>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                    <x-primary-button>
-                                        <a href="{{ route('stores.stocktaking', $store->id) }}" class="text-green-500 hover:text-green-600">View Inventory</a>
-                                    </x-primary-button>
+                                    <a href="{{ route('stores.stocktaking', $store->id) }}" class="text-green-500 hover:text-green-600">
+                                        <x-primary-button>
+                                            View Inventory
+                                        </x-primary-button>
+                                    </a>
                                 <td class="px-6 py-4 whitespace-nowrap">
                                     <div class="flex">
                                         <x-primary-button><a href="{{ route('stores.edit', $store->id) }}" class="text-blue-500">Edit</a></x-primary-button>

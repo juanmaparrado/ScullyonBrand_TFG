@@ -41,7 +41,9 @@
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                         <div class="flex items-center space-x-2">
-                                            <x-primary-button><a href="{{ route('categories.edit', $category) }}" class="">Edit</a></x-primary-button>
+                                            <a href="{{ route('categories.edit', $category) }}" class="">
+                                            <x-primary-button>Edit</x-primary-button>
+                                            </a>
                                             <form action="{{ route('categories.destroy', $category) }}" method="POST">
                                                 @csrf
                                                 @method('DELETE')

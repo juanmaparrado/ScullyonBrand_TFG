@@ -31,11 +31,16 @@
                                 <td class="px-6 py-4 whitespace-nowrap">{{ $product->stock }}</td>
                                 <td class="px-6 py-4 whitespace-nowrap">
                                 @if ($product->reviews->count() > 0)
-                                <x-primary-button><a href="{{ route('products.reviews', $product->id) }}" class="text-green-500 hover:text-green-600">Ver reviews</a></x-primary-button></td>
+                                <a href="{{ route('products.reviews', $product->id) }}" class="text-green-500 hover:text-green-600">
+                                    <x-primary-button>Ver reviews</x-primary-button>
+                                </a>
+                                </td>
                                 @endif
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                    <x-primary-button><a  href="{{ route('products.edit', $product->id) }}">Edit</a></x-primary-button>
+                                    <a  href="{{ route('products.edit', $product->id) }}">
+                                        <x-primary-button>Edit</x-primary-button>
+                                    </a>
                                    <form action="{{ route('products.destroy', $product->id) }}" method="POST" class="inline">
                                         @csrf
                                         @method('DELETE')
