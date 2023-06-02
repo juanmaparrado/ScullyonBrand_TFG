@@ -67,7 +67,15 @@
                     <div class="mb-3">
                         <strong>{{ $store->name }}</strong>
                         <div class="progress">
-                            <div class="progress-bar" role="progressbar" style="width: {{ $store->inventories_count }}%;" aria-valuenow="{{ $store->inventories_count }}" aria-valuemin="0" aria-valuemax="100">{{ $store->inventories_count }}</div>
+                            <div class="progress-bar 
+                                @if ($store->inventories_count < 10)
+                                    bg-danger
+                                @elseif ($store->inventories_count > 25)
+                                    bg-success
+                                @else
+                                    bg-warning
+                                @endif
+                                " role="progressbar" style="width: {{ $store->inventories_count }}%;" aria-valuenow="{{ $store->inventories_count }}" aria-valuemin="0" aria-valuemax="100">{{ $store->inventories_count }}</div>
                         </div>
                     </div>
                 @endforeach
