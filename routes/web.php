@@ -7,6 +7,8 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\StoreController;
 use Illuminate\Support\Facades\Route;
+use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,17 +32,22 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+   
 });
 
-Route::resource('categories', CategoryController::class);
+Route::middleware('auth')->group(function () {
+    Route::resource('categories', CategoryController::class);
 
-Route::resource('products', ProductController::class);
-Route::get('products/{product}/reviews', [ProductController::class, 'showReviews'])->name('products.reviews');
+    Route::resource('products', ProductController::class);
+    Route::get('products/{product}/reviews', [ProductController::class, 'showReviews'])->name('products.reviews');
 
-Route::resource('orders', OrderController::class);
+    Route::resource('orders', OrderController::class);
 
-Route::resource('stores', StoreController::class);
-Route::get('stores/{store}/staff', [StoreController::class, 'staff'])->name('stores.staff');
-Route::get('/stores/{store}/stocktaking', [StoreController::class, 'stocktaking'])->name('stores.stocktaking');
+    Route::resource('stores', StoreController::class);
+    Route::get('stores/{store}/staff', [StoreController::class, 'staff'])->name('stores.staff');
+    Route::get('/stores/{store}/stocktaking', [StoreController::class, 'stocktaking'])->name('stores.stocktaking');
+
+});
+
 
 require __DIR__.'/auth.php';

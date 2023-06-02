@@ -1,10 +1,15 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h1 class="text-2xl font-semibold text-center">Product List</h1>
-        <br>
-        <a href="{{ route('products.create') }}" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Create Product</a>
-    </x-slot>
+@extends('adminlte::page')
+@section('title', 'Dashboard')
 
+@section('content_header') 
+    <h1 class="text-2xl font-semibold text-center">Product List</h1>
+@stop
+
+@section('content')
+<div style="display: grid; place-items: center;">
+    <a href="{{ route('products.create') }}" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded ">Create Product</a>
+</div>
+<x-app-layout>
     <div class="py-6">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
@@ -26,11 +31,16 @@
                                 <td class="px-6 py-4 whitespace-nowrap">{{ $product->stock }}</td>
                                 <td class="px-6 py-4 whitespace-nowrap">
                                 @if ($product->reviews->count() > 0)
-                                <x-primary-button><a href="{{ route('products.reviews', $product->id) }}" class="text-green-500 hover:text-green-600">Ver reviews</a></x-primary-button></td>
+                                <a href="{{ route('products.reviews', $product->id) }}" class="text-green-500 hover:text-green-600">
+                                    <x-primary-button>Ver reviews</x-primary-button>
+                                </a>
+                                </td>
                                 @endif
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                    <x-primary-button><a  href="{{ route('products.edit', $product->id) }}">Edit</a></x-primary-button>
+                                    <a  href="{{ route('products.edit', $product->id) }}">
+                                        <x-primary-button>Edit</x-primary-button>
+                                    </a>
                                    <form action="{{ route('products.destroy', $product->id) }}" method="POST" class="inline">
                                         @csrf
                                         @method('DELETE')
@@ -47,5 +57,5 @@
         </div>
     </div>
 </x-app-layout>
-
+@stop
 

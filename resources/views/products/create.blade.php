@@ -1,8 +1,12 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h1 class="text-2xl font-semibold">Create Product</h1>
-    </x-slot>
+@extends('adminlte::page')
+@section('title', 'Dashboard')
 
+@section('content_header') 
+    <h1 class="text-2xl font-semibold text-center">New Product</h1>
+@stop
+
+@section('content')
+<x-app-layout>
     <div class="py-6">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
@@ -38,9 +42,10 @@
                         </select>
                     </div>
 
-                    <button type="submit" class="btn btn-primary">Create</button>
+                    <button type="submit" class="btn btn-success bg-green">Create</button>
                 </form>
             </div>
         </div>
     </div>
 </x-app-layout>
+@stop

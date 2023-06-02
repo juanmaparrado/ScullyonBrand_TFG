@@ -1,10 +1,15 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h1 class="text-2xl font-semibold text-center">Store List</h1>
-        <br>
-        <a href="{{ route('stores.create') }}" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Create Store</a>
-    </x-slot>
+@extends('adminlte::page')
+@section('title', 'Dashboard')
 
+@section('content_header') 
+    <h1 class="text-2xl font-semibold text-center">Store List</h1>
+@stop
+
+@section('content')
+<x-app-layout>
+    <div style="display: grid; place-items: center;">
+        <a href="{{ route('stores.create') }}" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Create Store</a>
+    </div>
     <div class="py-6">
         <div class="max-w-8xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
@@ -28,14 +33,18 @@
                                 <td class="px-6 py-4 whitespace-nowrap">{{ $store->city }}</td>
                                 <td class="px-6 py-4 whitespace-nowrap">{{ $store->phone }}</td>
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                    <x-primary-button>
-                                        <a href="{{ route('stores.staff', $store->id) }}">View Staff</a>
-                                    </x-primary-button>
+                                    <a href="{{ route('stores.staff', $store->id) }}">
+                                        <x-primary-button>
+                                            View Staff
+                                        </x-primary-button>
+                                    </a>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                    <x-primary-button>
-                                        <a href="{{ route('stores.stocktaking', $store->id) }}" class="text-green-500 hover:text-green-600">View Inventory</a>
-                                    </x-primary-button>
+                                    <a href="{{ route('stores.stocktaking', $store->id) }}" class="text-green-500 hover:text-green-600">
+                                        <x-primary-button>
+                                            View Inventory
+                                        </x-primary-button>
+                                    </a>
                                 <td class="px-6 py-4 whitespace-nowrap">
                                     <div class="flex">
                                         <x-primary-button><a href="{{ route('stores.edit', $store->id) }}" class="text-blue-500">Edit</a></x-primary-button>
@@ -54,4 +63,4 @@
         </div>
     </div>
 </x-app-layout>
-
+@stop

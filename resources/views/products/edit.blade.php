@@ -1,8 +1,12 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h1 class="text-2xl font-semibold">Edit Product</h1>
-    </x-slot>
+@extends('adminlte::page')
+@section('title', 'Dashboard')
 
+@section('content_header') 
+<h1 class="text-2xl font-semibold text-center">Edit Product</h1>
+@stop
+
+@section('content')
+<x-app-layout>
     <div class="py-6">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
@@ -17,7 +21,7 @@
 
                     <div class="mb-4">
                         <label for="price" class="block text-sm font-medium text-gray-700">Price</label>
-                        <input type="number" name="price" id="price" class="form-input mt-1 block w-full" value="{{ $product->price }}" required>
+                        <input type="text" name="price" id="price" class="form-input mt-1 block w-full" value="{{ $product->price }}">
                     </div>
 
                     <div class="mb-4">
@@ -41,9 +45,10 @@
                         </select>
                     </div>
 
-                    <button type="submit" class="btn btn-primary">Update</button>
+                    <button type="submit" class="btn btn-success bg-green">Update</button>
                 </form>
             </div>
         </div>
     </div>
 </x-app-layout>
+@stop

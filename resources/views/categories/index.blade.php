@@ -1,12 +1,17 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight text-center">
-            {{ __('Categories') }}
-        </h2>
-        <br>
-        <a href="{{ route('categories.create') }}" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Create Category</a>
-    </x-slot>
+@extends('adminlte::page')
+@section('title', 'Dashboard')
 
+@section('content_header') 
+    <h2 class="font-semibold text-xl text-gray-800 leading-tight text-center">
+        {{ __('Categories') }}
+    </h2>
+@stop
+
+@section('content')
+<x-app-layout>
+    <div style="display: grid; place-items: center;">
+        <a href="{{ route('categories.create') }}" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Create Category</a>
+    </div>
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
@@ -36,7 +41,9 @@
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                         <div class="flex items-center space-x-2">
-                                            <x-primary-button><a href="{{ route('categories.edit', $category) }}" class="">Edit</a></x-primary-button>
+                                            <a href="{{ route('categories.edit', $category) }}" class="">
+                                            <x-primary-button>Edit</x-primary-button>
+                                            </a>
                                             <form action="{{ route('categories.destroy', $category) }}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
@@ -53,4 +60,4 @@
         </div>
     </div>
 </x-app-layout>
-
+@stop
