@@ -109,10 +109,9 @@ return [
     'preloader' => [
         'enabled' => true,
         'img' => [
-            'alt' => 'SCULLYON ADMIN',
             'effect' => 'animation__shake',
-            'width' => 60,
-            'height' => 60,
+            'width' => 300,
+            'height' => 300,
         ],
     ],
 
@@ -252,7 +251,7 @@ return [
     */
 
     'use_route_url' => false,
-    'dashboard_url' => 'home',
+    'dashboard_url' => 'dashboard',
     'logout_url' => 'logout',
     'login_url' => 'login',
     'register_url' => 'register',
@@ -295,7 +294,7 @@ return [
             'url'  => '/profile',
             'icon' => 'fas fa-fw fa-user',
         ],
-        ['header' => 'SHOP'],
+        ['header' => 'SHOP DETAILS'],
         [
             'text' => 'Products',
             'url'  => '/products',

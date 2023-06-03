@@ -33,9 +33,9 @@
                                     <td class="px-6 py-4 whitespace-nowrap">{{ $order->payment_method }}</td>
                                     <td class="px-6 py-4 whitespace-nowrap">{{ $order->total }}</td>
                                     <td class="px-6 py-4 whitespace-nowrap">
-                                        <x-primary-button>
-                                            <a href="{{ route('orders.show', $order->id) }}" >Ver Detalles</a>
-                                        </x-primary-button>
+                                        <a href="{{ route('orders.show', $order->id) }}" ><x-primary-button>
+                                            Ver Detalles
+                                        </x-primary-button></a>
                                     </td>
                                 </tr>
                             @endforeach
