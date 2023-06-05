@@ -82,7 +82,78 @@
 
 
 
-        @media(max-width:1000px){
+
+
+/*****************************HERO SECTION ***************************/
+
+        .container-main {
+            width: 100%;
+            height: 100vh;
+            display: grid;
+            place-items: center;
+            margin-bottom: 5%;
+        }
+
+        .container-main img {
+            padding-top: 5%;
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+            
+            opacity: 0.8;
+        }
+        /******SLIDESHOW********/
+        section{
+            padding:12%;
+            padding-top: 0%;
+            display: grid;
+            place-items: center;
+            grid-template-columns: 1fr 1fr ;
+            column-gap: 20px;
+        }
+        section canvas{
+            border-radius: 6%;
+            
+            width: 100%;
+            object-fit: cover;
+        }
+        section div{
+            width: 100%;
+            display:grid;
+            place-items: center;
+            row-gap: 20px;
+        }
+        /*****BOTON********/
+        div h1{
+            font-size: 100%;
+            font-weight: 100;
+            color: black;
+            text-align:center;
+        }
+        button {
+            padding: 1% 9%;
+            border: transparent;
+            box-shadow: 8px 10px 8px rgb(226,135,67,0.7);
+            background: black;
+            border-radius: 4px;
+        }
+        button a{
+            font-size: 100%;
+            color: white;
+            text-decoration: none;
+        }
+        
+        button:hover {
+            background: rgb(2,0,36);
+            background: linear-gradient(-30deg, rgba(0,0,0,1) 65%, rgb(226,135,67,0.7) 100%);
+        }
+        
+        button:active {
+            transform: translate(0em, 0.2em);
+        }
+
+
+        @media(max-width:1100px){
             header{
                 padding: 15px 3%;
             }
@@ -146,72 +217,6 @@
             opacity: 0.8;
         }
     }
-
-/*****************************HERO SECTION ***************************/
-
-        .container-main {
-            width: 100%;
-            height: 100vh;
-            display: grid;
-            place-items: center;
-            margin-bottom: 5%;
-        }
-
-        .container-main img {
-            padding-top: 5%;
-            width: 100%;
-            height: 100vh;
-            object-fit: cover;
-            opacity: 0.8;
-        }
-        /******SLIDESHOW********/
-        section{
-            padding:12%;
-            padding-top: 0%;
-            display: grid;
-            place-items: center;
-            grid-template-columns: 1fr 1fr ;
-            column-gap: 20px;
-        }
-        section canvas{
-            border-radius: 6%;
-            
-            width: 100%;
-            object-fit: cover;
-        }
-        section div{
-            display:grid;
-            place-items: center;
-            row-gap: 20px;
-        }
-        /*****BOTON********/
-        div h1{
-            font-size: 50px;
-            font-weight: 100;
-            color: black;
-            text-align:center;
-        }
-        button {
-            padding: 0.5em 2em;
-            border: transparent;
-            box-shadow: 8px 10px 8px rgb(226,135,67,0.7);
-            background: black;
-            border-radius: 4px;
-        }
-        button a{
-            font-size: 17px;
-            color: white;
-            text-decoration: none;
-        }
-        
-        button:hover {
-            background: rgb(2,0,36);
-            background: linear-gradient(-30deg, rgba(0,0,0,1) 65%, rgb(226,135,67,0.7) 100%);
-        }
-        
-        button:active {
-            transform: translate(0em, 0.2em);
-        }
 
     </style>
     </head>
