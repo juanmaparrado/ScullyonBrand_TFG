@@ -1,0 +1,44 @@
+.form-group{
+    display: grid;
+    place-items: center;
+}
+
+.form-control{
+    width: 75%;
+}
+
+.drag-area{
+    border: 2px dashed #ccc;
+    border-radius: 20px;
+    width: 60%;
+    padding: 5%;
+    height: 300px;
+    display: grid;
+    place-items: center;
+}
+
+.drag-area .icon{
+    font-size: 60px;
+    color: #CE9F69;
+}
+.drag-area .header{
+    font-size: 18px;
+    font-weight: 700;
+    color: #695F55;
+    text-align: center;
+}
+
+.drag-area .support{
+    font-size :  12px;
+    margin: 10px 0 15px 0;
+}
+
+.drag-area .button{
+    text-decoration: underline;
+    color: #CE9F69;
+    cursor: pointer;
+}
+
+.drag-area.active{
+    border: 2px solid #CE9F69;
+}

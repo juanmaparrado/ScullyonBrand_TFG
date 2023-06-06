@@ -7,8 +7,10 @@ export default defineConfig({
             input: [
                 'resources/css/app.css',
                 'resources/css/landing.css',
+                'resources/css/photos.css',
                 'resources/js/app.js',
                 'resources/js/landing.js',
+                'resources/js/photos.js',
 
             ],
             refresh: true,
