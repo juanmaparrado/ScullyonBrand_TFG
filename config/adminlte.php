@@ -315,6 +315,11 @@ return [
             'url'  => '/categories',
             'icon' => 'fa fa-book',
         ],
+        [
+            'text' => 'Photos',
+            'url'  => '/photos',
+            'icon' => 'fa fa-camera',
+        ],
 
     ],
 

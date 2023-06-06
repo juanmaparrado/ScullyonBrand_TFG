@@ -43,4 +43,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/stores/{store}/stocktaking', [StoreController::class, 'stocktaking'])->name('stores.stocktaking');
 });
 
+use App\Http\Controllers\ImageController;
+
+Route::get('/photos', [ImageController::class, 'index'])->name('photos.index');
+Route::get('/photos/create', [ImageController::class, 'create'])->name('photos.create');
+Route::post('/photos', [ImageController::class, 'store'])->name('photos.store');
+
 require __DIR__.'/auth.php';
