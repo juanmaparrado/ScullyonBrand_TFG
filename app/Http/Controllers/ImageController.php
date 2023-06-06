@@ -24,6 +24,7 @@ class ImageController extends Controller
     public function store(Request $request)
     {
         if ($request->hasFile('photo')) {
+
             $image = $request->file('photo')->store('public');
             $photo = Storage::url($image);
             Image::create([

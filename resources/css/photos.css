@@ -1,6 +1,7 @@
 .form-group{
     display: grid;
     place-items: center;
+    height: auto;
 }
 
 .form-control{
@@ -41,4 +42,17 @@
 
 .drag-area.active{
     border: 2px solid #CE9F69;
+}
+
+.output{
+    display: grid;
+    place-items: center;
+    width: 50%;
+}
+
+.output img{
+    width: 60%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
 }

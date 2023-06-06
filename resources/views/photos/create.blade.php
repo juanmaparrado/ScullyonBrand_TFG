@@ -24,13 +24,15 @@
                     <div class="drag-area">
                         <div class="icon"><i class="fa fa-cloud-upload-alt"></i></div>
                         <span class="header">Drag & Drop</span>
-                        <span class="header">or <span class="button">Browse</span></span> 
+                        <span class="header">or <span class="button"><input type="file" name="photo" class="input" hidden />Browse</span></span> 
+                        
                         <span class="support">
                             Supported files: jpg, jpeg, png.
                         </span>
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary bg-blue">Subir</button>
+                <div class="output"></div>
             </form>
         </div>
     </div>
