@@ -18,38 +18,64 @@
         @vite('resources/js/landing.js')
     </head>
     <body class="antialiased">
-            @if (Route::has('login'))
-                <header>
-                    <a href="{{ url('/') }}" class="logo">
-                        <x-application-logo class="w-30 h-20" id="logNav" />
-                    </a>
-
-                    <ul class="nav">
-                        <li><a href="{{ url('/') }}" class="">COLLECTION</a></li>
-                        <li><a href="{{ url('/') }}" class="alert">NEW DROP</a></li>
-                        <li><a href="{{ url('/') }}" class="">THE TEAM</a></li>
-                        @role('admin')
-                            <li><a href="{{ url('/dashboard') }}" class="">Admin</a></li>
-                        @endrole
-                    </ul>
-                    <ul class="log">
-                        @auth
-                        @else
-                            <li><a href="{{ route('login') }}" class="">Log in</a></li>
-
-                            @if (Route::has('register'))
-                            <li><a href="{{ route('register') }}" class="">Register</a></li>
-                            @endif
-                        @endauth
-                        <li><i class="fa-solid fa-user" id="profileIcon"></i></li>
-
-                    </ul>
-                </header>
-            @endif
+           
         <div id="container" class="container-main" >
+            @if (Route::has('login'))
+            <header>
+                <a href="{{ url('/') }}" class="logo">
+                    <x-application-logo class="w-30 h-20" id="logNav" />
+                </a>
+
+                <ul class="nav">
+                    <li><a href="{{ url('/') }}" class="">COLLECTION</a></li>
+                    <li><a href="{{ url('/') }}" class="alert">NEW DROP</a></li>
+                    <li><a href="{{ url('/') }}" class="">THE TEAM</a></li>
+                    @role('admin')
+                        <li><a href="{{ url('/dashboard') }}" class="">Admin</a></li>
+                    @endrole
+                </ul>
+                <ul class="log">
+                    @auth
+                    @else
+                        <li><a href="{{ route('login') }}" class="">Log in</a></li>
+
+                        @if (Route::has('register'))
+                        <li><a href="{{ route('register') }}" class="">Register</a></li>
+                        @endif
+                    @endauth
+                    <li><i class="fa-solid fa-user" id="profileIcon"></i></li>
+
+                </ul>
+            </header>
+        @endif
             <img src="{{ asset('storage\cartel-publicidad.jpg') }}" width="300" height="300" alt="Descripción de la imagen">
             
         </div>
+        <section id="sec-01">
+            <div class="container">
+                <h2 class="main-title">REveal elements on scrol</h2>
+                <div class="content">
+                    <div class="image">
+                        <img src="{{ asset('storage\cartel-publicidad.jpg') }}" alt="">
+                    </div>
+                    <div class="text-box">
+                        <h3>Lorem ipsum dolor </h3>
+                        <p>
+                            sit amet consectetur, adipisicing elit. Nemo adipisci 
+                            saepe iure consequuntur dolores neque cupiditate. At et possimus perspiciatis similique 
+                            sit quo quos ex aliquid quia, ratione, odit qui?
+                        </p>
+                    </div>
+                </div>
+                <div class="media-icon">
+                    <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    <a href=""><i class="fa-brands fa-tiktok"></i></a>
+                    <a href=""><i class="fa-brands fa-twitter"></i></a>
+                    <a href=""><i class="fa-brands fa-facebook"></i></a>
+                </div>
+            </div>
+        </section>
+        
         <section id="slideshow-container">
             <canvas id="canvas" width="1204" height="1000"></canvas>
             <div>
@@ -57,5 +83,7 @@
                 <button><a href="{{ route('login') }}">SHOP NOW</a></button>
             </div>
         </section>
+
+
     </body>
     </html>
