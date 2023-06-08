@@ -28,8 +28,8 @@
 
                 <ul class="nav">
                     <li><a href="{{ url('/') }}" class="">COLLECTION</a></li>
-                    <li><a href="{{ url('/') }}" class="alert">NEW DROP</a></li>
-                    <li><a href="{{ url('/') }}" class="">THE TEAM</a></li>
+                    <li><a href="{{ url('/') }}" class="alert">LAST DROP</a></li>
+                    <li><a href="{{ url('/team') }}" class="">THE TEAM</a></li>
                     @role('admin')
                         <li><a href="{{ url('/dashboard') }}" class="">Admin</a></li>
                     @endrole

@@ -38,13 +38,9 @@ translateY: {
 },
 loop: true
 });
-//animacion sec1
 
-var animation = anime({
-    targets: '.container',
-    translateX: 90,
-    opacity:1,
-    delay: 2000,
-    easing: 'easeInOutSine'
-  });
+
+  
+
+
 
