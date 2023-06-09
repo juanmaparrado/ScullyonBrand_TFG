@@ -33,7 +33,7 @@ class DatabaseSeeder extends Seeder
         Staff::factory()->count(10)->create();
         Inventory::factory()->count(50)->create();
         Order::factory()->count(20)->create();
-        Image::factory()->count(40)->create();
+        //Image::factory()->count(40)->create();
         OrderItem::factory()->count(100)->create();
     }
 }

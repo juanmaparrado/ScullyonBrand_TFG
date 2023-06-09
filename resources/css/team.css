@@ -1,0 +1,163 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Space Grotesk', sans-serif;
+	text-decoration: none;
+}
+header{
+    position: sticky;
+    top: 0;
+    right: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    padding: 33px 9%;
+    box-shadow: 0 0 10px rgba(56, 56, 56, 0.1);
+}
+.logo{
+    width: 100px;
+    height: 40px;
+    object-fit: cover;
+} 
+.nav{
+    display: flex;
+}
+.nav a{
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+}
+.nav li{
+    list-style: none;
+    margin-left: 60px;
+}
+.log{
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+}
+.log a{
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+    font-weight: 500;
+    margin-left: 20px;
+}
+.alert{
+    color: #E28743;
+}
+.nav a:hover{
+    border-bottom: 2px solid #E28743;
+}
+#profileIcon{
+        display: none;
+    }
+
+/*************team*************/
+
+.team{
+	margin-top: 100px;
+	position: relative;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+.team-content{
+	width: 100%;
+	max-width: 1350px;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(150px, auto));
+	align-items: center;
+	gap: 2rem;
+	text-align: center;
+	margin-top: 4rem;
+}
+.team-content img{
+	width: 100%;
+	height: auto;
+	border-radius: 15px;
+	margin-bottom: 15px;
+}
+.center h1{
+	font-size: 4rem;
+	text-align: center;
+}
+.box{
+	padding: 16px;
+	background: #695F55;
+	border-radius: 15px;
+	transition: all .38s ease;
+	box-shadow: 10px 10px rgba(0, 0, 0, 0.1);
+}
+.box h3{
+	font-size: 23px;
+	font-weight: 600;
+	color: #fff;
+	margin-bottom: 8px;
+}
+.box h5{
+	font-size: 15px;
+	font-weight: 600;
+	color: #b7b4bb;
+	margin-bottom: 15px;
+	letter-spacing: 2px;
+}
+.icons i{
+	display: inline-block;
+	color: #b7b4bb;
+	font-size: 20px;
+	margin: 0 8px;
+	transition: all .38s ease;
+}
+.icons i:hover{
+	transform: scale(1.2);
+}
+.box:hover{
+	transform: translateY(-10px);
+	cursor: pointer;
+}
+
+@media(max-width: 1240px){
+	.team{
+		width: 100%;
+		height: auto;
+		padding: 90px 2%;
+	}
+	.center h1{
+		font-size: 3.2rem;
+	}
+}
+
+
+@media(max-width: 790px){
+    header{
+        padding: 15px 2% !important;
+        justify-content: center;
+    }
+    .nav a{
+        font-size: 8px !important;
+    }
+    .nav li{
+        margin-left: 18px;
+    }
+    .log a{
+        display: none;
+        }
+    #profileIcon{
+        display: grid;
+        place-items: center;
+        width: 10px;
+        height: 10px;
+        margin-left: 50px !important;
+    }
+    #logNav{
+        width: 100px;
+        height: 50px;
+    }
+}

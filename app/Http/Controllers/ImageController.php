@@ -3,63 +3,37 @@
 namespace App\Http\Controllers;
 
 use App\Models\Image;
+use App\Models\Product;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 
 class ImageController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        $images = Image::all();
+        return view('photos.index', compact('images'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        $products = Product::all();
+        return view('photos.create',compact('products'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
-    }
+        if ($request->hasFile('photo')) {
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Image $image)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Image $image)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Image $image)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Image $image)
-    {
-        //
+            $image = $request->file('photo')->store('public');
+            $photo = Storage::url($image);
+            Image::create([
+                'product_id' => $request->product_id,
+                'url_image' => $photo
+            ]);
+        }
+        return redirect()->route('photos.index');
     }
 }
+
+
