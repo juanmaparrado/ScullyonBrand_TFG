@@ -10,6 +10,8 @@ export default defineConfig({
                 'resources/css/photos.css',
                 'resources/css/team.css',
                 'resources/css/newdrop.css',
+                'resources/css/details.css',
+
                 'resources/js/app.js',
                 'resources/js/landing.js',
                 'resources/js/photos.js',
