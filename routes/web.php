@@ -28,6 +28,9 @@ Route::get('/', function () {
 Route::get('/team', function () {
     return view('team');
 });
+Route::get('/drop', function(){
+    return view('shop.newdrop');
+});
 
 
 Route::middleware('auth')->group(function () {
