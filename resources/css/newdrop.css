@@ -55,8 +55,13 @@ header{
 #profileIcon{
         display: none;
     }
+    svg{
+        position: absolute;
+        z-index: -1;
+        opacity: 0.9;
+}
 
-	section{
+section{
 	padding: 100px 8%;
 }
 .container{
@@ -81,7 +86,8 @@ header{
 	height: auto;
 }
 .box h4{
-	font-size: 15px;
+	font-size: 18px;
+	font-weight: 800;
 	letter-spacing: 1px;
 	margin-bottom: 8px;
 }
@@ -93,11 +99,11 @@ header{
 .box .cart i{
 	position: absolute;
 	top: 0;
-	left: 0;
+	right: 0;
 	width: 35px;
 	height: 35px;
-	background: var(--text-color);
-	color: var(--bg-color);
+	background: #2875f9;
+	color: white;
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
