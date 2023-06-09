@@ -60,7 +60,7 @@
                 <canvas id="canvas" width="1204" height="1000"></canvas>
                 <div>
                     <h1>SEE NEW DROP</h1>
-                    <button><a href="{{ route('login') }}">SHOP NOW</a></button>
+                    <button><a href="{{ url('/drop') }}">SHOP NOW</a></button>
                 </div>
             </section>
 

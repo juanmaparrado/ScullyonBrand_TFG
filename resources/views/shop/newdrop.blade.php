@@ -27,7 +27,7 @@
 
                 <ul class="nav">
                     <li><a href="{{ url('/') }}" class="">COLLECTION</a></li>
-                    <li><a href="{{ url('/') }}" class="alert">LAST DROP</a></li>
+                    <li><a href="{{ url('/drop') }}" class="alert">LAST DROP</a></li>
                     <li><a href="{{ url('/team') }}" class="">THE TEAM</a></li>
                     @role('admin')
                         <li><a href="{{ url('/dashboard') }}" class="">Admin</a></li>
@@ -83,7 +83,7 @@
                     <h4>I'm a product</h4>
                     <h5>$15.00</h5>
                     <div class="cart">
-                        <a href="#"><i class='bx bx-cart' ></i></a>
+                        <a href="#"><i class='fa-solid fa-cart' ></i></a>
                     </div>
                 </div>   
             </div>
