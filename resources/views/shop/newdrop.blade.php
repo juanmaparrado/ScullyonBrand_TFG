@@ -58,7 +58,7 @@
                     <h4>I'm a product</h4>
                     <h5>$15.00</h5>
                     <div class="cart">
-                        <a href="{{url('/shop/detail')}}"><i class="fa-solid fa-cart-shopping"></i></a>
+                        <a href="{{url('/drop/detail')}}"><i class="fa-solid fa-cart-shopping"></i></a>
                     </div>
                 </div>
     
@@ -90,6 +90,8 @@
                 </div>   
             </div>
         </section>
+    </body>
+</html>
         
 
         

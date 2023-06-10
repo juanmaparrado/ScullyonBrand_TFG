@@ -140,7 +140,7 @@ button:active {
     place-items: center;
     flex-direction: column;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 .main-title{
@@ -181,7 +181,7 @@ button:active {
     backdrop-filter: blur(20px);
     padding: 40px;
     max-width:400px ;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.4);
     border-radius: 4%;
     transform: translate(-80px,50px);
 }

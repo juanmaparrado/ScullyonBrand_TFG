@@ -70,42 +70,34 @@
                 <div class="size">
                     <p>SIZE: </p>
                     <select name="size" id="">
-                        <option value="S">1</option>
-                        <option value="M">2</option>
-                        <option value="L">3</option>
-                        <option value="XL">4</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
                     </select>
                     <div class="button-action">
-                        <button>Try in store</button>
                         <button>Add to cart</button>
                     </div>
-                </div><!--size-->
+                </div>
 
                 <ul>
                     <li>Collection, 360° Show.</li>
-                    <li>Blue Japanese denim</li>
                     <li>This item is unisex</li>
                     <li>Oversize fit</li>
                     <li>Attached hood</li>
                     <li>2 slash pockets at front</li>
-                    <li>Buttoned cuffs</li>
                     <li>Adjustable buttoning at waist</li>
-                    <li>Balenciaga engraved flex buttons</li>
-                    <li>Made in Japan</li>
+                    <li>Made in Spain</li>
                     <li>Dry cleaning</li>
-                    <li>Model is 189 cm / 6'2'' and is wearing a size 4</li>
                     <li>Material: 100% cotton</li>
-                    <li>Product ID: 719313TNW014268</li>
                 </ul>
 
                 <div class="expand">
                     <p>
                         <span>PRODUCT SUSTAINABILITY</span>
-                        
                     </p>
                     <p>
                         <span>FREE SHIPPING, FREE RETURNS</span>
-                        
                     </p>
                     <p>
                         <span>PAYMENT</span>
@@ -114,47 +106,6 @@
                 </div><!--expand-->
             </div>
         </div><!--product-detail-->
-    </div><!--container-->
-
-
-    <footer>
-        <div class="footer">
-            <div>
-                <h4>NEWSLETTER</h4>
-                <ul>
-                    <li>Subscribe to our newsletter</li>
-                </ul>
-            </div>
-
-            <div>
-                <h4>CLIENT SERVICES</h4>
-                <ul>
-                    <li>FAQ</li>
-                    <li>Track order</li>
-                    <li>Returns</li>
-                    <li>Delivery</li>
-                    <li>Payment</li>
-                </ul>
-            </div>
-
-            <div>
-                <h4>CONNECT</h4>
-                <ul>
-                    <li>Facebook</li>
-                    <li>Instagram</li>
-                    <li>Youtube</li>
-                </ul>
-            </div>
-
-            <div>
-                <h4>BOUTIQUES</h4>
-                <ul>
-                    <li>Find a store nearby</li>
-                    <li>Language: English</li>
-                </ul>
-            </div>
-        </div>
-    </footer>
-    
+    </div><!--container-->   
 </body>
 </html>

@@ -1,18 +1,8 @@
-@font-face {
-    font-family: "Bold";
-    src: url("../fonts/BB-Bold.woff2");
-}
-
-@font-face {
-    font-family: "Regular";
-    src: url("../fonts/BB-Regular.woff2");
-}
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Regular", Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 :root {
@@ -119,7 +109,6 @@ img {
 
 .pd-header .name {
     font-size: 1.5rem;
-    font-family: "Bold";
 }
 
 .pd-header .price {
@@ -137,17 +126,17 @@ img {
 
 .size .button-action {
     display: flex;
-    justify-content: center;
+    justify-content: right;
     align-items: center;
 }
 
 .size .button-action button {
     width: 50%;
     padding: 5px 30px;
-    border: 1px solid var(--black);
+    border: 1px solid black;
     border-radius: 5px;
-    color: var(--black);
-    background-color: var(--white);
+    color: black;
+    background-color: white;
     text-transform: uppercase;
     cursor: pointer;
     transition: .2s;
@@ -158,18 +147,18 @@ img {
 }
 
 .size .button-action button:last-child {
-    color: var(--white);
-    background-color: var(--black);
+    color: white;
+    background-color: black;
 }
 
 .size .button-action button:hover {
-    color: var(--white);
-    background-color: var(--black);
+    color: white;
+    background-color: black;
 }
 
 .size .button-action button:last-child:hover {
-    color: var(--black);
-    background-color: var(--white);
+    color: black;
+    background-color: white;
 }
 
 .pd-infos ul {
@@ -182,33 +171,12 @@ img {
     align-items: center;
     margin-bottom: 10px;
     padding: 5px;
-    border-bottom: 1px solid var(--black);
+    border-bottom: 1px solid black;
     cursor: pointer;
 }
 
-.footer {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 20px;
-    border-top: 1px solid var(--black);
+.expand .phap{
+    padding: 3%;
+    font-size: 15px;
 }
 
-.footer>* {
-    width: 25%;
-}
-
-.footer h4 {
-    margin-bottom: 10px;
-    font-family: "Bold";
-}
-
-.footer ul li {
-    margin: 5px 0;
-    list-style: none;
-    cursor: pointer;
-}
-
-.footer ul li:hover {
-    text-decoration: underline;
-}

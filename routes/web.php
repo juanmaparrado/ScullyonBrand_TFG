@@ -31,7 +31,7 @@ Route::get('/team', function () {
 Route::get('/drop', function(){
     return view('shop.newdrop');
 });
-Route::get('/shop/detail', function(){
+Route::get('/drop/detail', function(){
     return view('shop.details');
 });
 
