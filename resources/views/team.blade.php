@@ -35,12 +35,14 @@
                     <li><a href="{{ url('/') }}" class="">COLLECTION</a></li>
                     <li><a href="{{ url('/drop') }}" class="alert">NEW DROP</a></li>
                     <li><a href="{{ url('/team') }}" class="">THE TEAM</a></li>
-                    @role('admin')
-                        <li><a href="{{ url('/dashboard') }}" class="">Admin</a></li>
-                    @endrole
+
                 </ul>
                 <ul class="log">
                     @auth
+                    @role('admin')
+                    <li><a href="{{ url('/dashboard') }}" class="">Admin</a></li>
+                    @endrole
+                    <li><i class="fa-solid fa-user" id="profileIcon"></i></li>
                     @else
                         <li><a href="{{ route('login') }}" class="">Log in</a></li>
 
@@ -48,7 +50,6 @@
                         <li><a href="{{ route('register') }}" class="">Register</a></li>
                         @endif
                     @endauth
-                    <li><i class="fa-solid fa-user" id="profileIcon"></i></li>
 
                 </ul>
             </header>

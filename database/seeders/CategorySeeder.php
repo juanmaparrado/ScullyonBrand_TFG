@@ -13,16 +13,16 @@ class CategorySeeder extends Seeder
      */
     public function run(): void
     {
-        Category::create([
-            'name' => 'Hoodies',
-        ],[
-            'name' => 'T-Shirts',
-        ],[
-            'name' => 'Pants',
-        ],[
-            'name' => 'Shoes',
-        ],[
-            'name' => 'Accessories',
-        ]);
+        $categories = [
+            ['name' => 'Hoodies'],
+            ['name' => 'T-Shirts'],
+            ['name' => 'Pants'],
+            ['name' => 'Shoes'],
+            ['name' => 'Accessories'],
+        ];
+
+        foreach ($categories as $category) {
+            Category::create($category);
+        }
     }
 }
