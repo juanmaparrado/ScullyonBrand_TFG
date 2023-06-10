@@ -25,16 +25,17 @@ class DatabaseSeeder extends Seeder
         $this->call([
             RolePermisionSeeder::class,
             UserSeeder::class,
+            CategorySeeder::class,
             ProductSeeder::class,
         ]);
-        Category::factory()->count(10)->create();
+        //Category::factory()->count(10)->create();
         //Product::factory()->count(20)->create();
-        Review::factory()->count(30)->create();
-        Store::factory()->count(5)->create();
+        Review::factory()->count(20)->create();
+        Store::factory()->count(3)->create();
         Staff::factory()->count(10)->create();
         Inventory::factory()->count(50)->create();
         Order::factory()->count(20)->create();
         //Image::factory()->count(40)->create();
-        OrderItem::factory()->count(100)->create();
+        OrderItem::factory()->count(50)->create();
     }
 }

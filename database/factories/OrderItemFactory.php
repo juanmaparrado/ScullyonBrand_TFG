@@ -21,12 +21,13 @@ class OrderItemFactory extends Factory
     {
         $orderIds = Order::pluck('id');
         $productIds = Product::pluck('id');
-
+        $product = Product::find($this->faker->randomElement($productIds));
+        $price = $product->price;
         return [
             'order_id' => $this->faker->randomElement($orderIds),
-            'product_id' => $this->faker->randomElement($productIds),
+            'product_id' => $product->id,
             'quantity' => $this->faker->numberBetween(1, 10),
-            'price' => $this->faker->randomFloat(2, 1, 100),
+            'price' => $price,
         ];
     }
 }
