@@ -93,6 +93,7 @@ section{
 }
 .box h5{
 	font-size: 14px;
+	font-weight: 900;
 	letter-spacing: 1px;
 	margin-bottom: 20px;
 }
@@ -102,7 +103,7 @@ section{
 	right: 0;
 	width: 35px;
 	height: 35px;
-	background: #2875f9;
+	background: #695F55;
 	color: white;
 	display: inline-flex;
 	align-items: center;

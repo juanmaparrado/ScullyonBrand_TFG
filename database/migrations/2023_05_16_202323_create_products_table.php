@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->float('price');
             $table->integer('stock');
-            $table->string('url_image')->nullable();
+            $table->string('description');
             $table->unsignedBigInteger('category_id')->nullable(); // FK
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('SET NULL');
             $table->timestamps();

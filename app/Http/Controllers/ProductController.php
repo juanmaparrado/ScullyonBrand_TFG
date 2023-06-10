@@ -83,4 +83,19 @@ class ProductController extends Controller
         ]);
     }
 
+    public function shopIndex()
+    {
+        $products = Product::with('images')->get();
+
+        return view('shop.newdrop', compact('products'));
+    }
+
+    public function showDetails($productId)
+    {
+    $product = Product::findOrFail($productId);
+    $reviews = $product->reviews()->get();
+
+    return view('shop.details', compact('product','reviews'));
+    }
+
 }

@@ -180,3 +180,34 @@ img {
     font-size: 15px;
 }
 
+
+@media(max-width: 790px){
+    header{
+        padding: 15px 2% !important;
+        justify-content: center;
+    }
+    .nav a{
+        font-size: 8px !important;
+    }
+    .nav li{
+        margin-left: 18px;
+    }
+    .log a{
+        display: none;
+        }
+    #profileIcon{
+        display: grid;
+        place-items: center;
+        width: 10px;
+        height: 10px;
+        margin-left: 50px !important;
+    }
+    #logNav{
+        width: 100px;
+        height: 50px;
+    }
+}
+
+
+
+

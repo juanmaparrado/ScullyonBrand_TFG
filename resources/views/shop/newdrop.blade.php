@@ -53,41 +53,21 @@
 
         <section class="shop" id="shop">
             <div class="container">
+                
+                @foreach ($products as $product)
                 <div class="box">
-                    <img src="{{ asset('storage\01.png') }}">
-                    <h4>I'm a product</h4>
-                    <h5>$15.00</h5>
+                    @if (isset($product->images) && count($product->images) > 0)
+                    <img src="{{ asset($product->images[0]->url_image) }}">
+                    @else
+                    <img src=""> 
+                    @endif
+                    <h4>{{ $product->name }}</h4>
+                    <h5>{{ $product->price }}</h5>
                     <div class="cart">
-                        <a href="{{url('/drop/detail')}}"><i class="fa-solid fa-cart-shopping"></i></a>
-                    </div>
+                        <a href="{{ route('drop.details', ['productId' => $product->id]) }}"><i class="fa-solid fa-cart-shopping"></i></a>
                 </div>
-    
-                <div class="box">
-                    <img src="{{ asset('storage\01.png') }}">
-                    <h4>I'm a product</h4>
-                    <h5>$15.00</h5>
-                    <div class="cart">
-                        <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-                    </div>
-                </div>
-    
-                <div class="box">
-                    <img src="{{ asset('storage\01.png') }}">
-                    <h4>I'm a product</h4>
-                    <h5>$15.00</h5>
-                    <div class="cart">
-                        <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-                    </div>
-                </div>
-    
-                <div class="box">
-                    <img src="{{ asset('storage\01.png') }}">
-                    <h4>I'm a product</h4>
-                    <h5>$15.00</h5>
-                    <div class="cart">
-                        <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-                    </div>
-                </div>   
+            </div>
+                @endforeach 
             </div>
         </section>
     </body>

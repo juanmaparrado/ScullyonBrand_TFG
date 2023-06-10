@@ -25,9 +25,10 @@ class DatabaseSeeder extends Seeder
         $this->call([
             RolePermisionSeeder::class,
             UserSeeder::class,
+            ProductSeeder::class,
         ]);
         Category::factory()->count(10)->create();
-        Product::factory()->count(20)->create();
+        //Product::factory()->count(20)->create();
         Review::factory()->count(30)->create();
         Store::factory()->count(5)->create();
         Staff::factory()->count(10)->create();

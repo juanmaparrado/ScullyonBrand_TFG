@@ -50,21 +50,15 @@
     </div>
         <div class="product-detail">
             <div class="pd-images">
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="{{asset("storage/02.png")}}" alt="">
-                <img src="{{asset("storage/02.png")}}" alt="">
-                <img src="{{asset("storage/02.png")}}" alt="">
-                <img src="{{asset("storage/02.png")}}" alt="">
+                @foreach ($product->images as $image)
+                    <img src="{{ asset($image->url_image) }}" alt="">
+                @endforeach
             </div>
 
             <div class="pd-infos">
                 <div class="pd-header">
-                    <p class="name">MEN'S PULL-OVER JACKET IN BLUE</p>
-                    <p class="price">$ 2500</p>
-                    <p class="short-des">Pull-Over Jacket in blue Japanese denim is from the look 52 of the Balenciaga's Winter 22</p>
+                    <p class="name">{{$product->name}}</p>
+                    <p class="price">$ {{ $product->price }}</p>
                 </div>
 
                 <div class="size">
@@ -93,17 +87,10 @@
                 </ul>
 
                 <div class="expand">
-                    <p>
-                        <span>PRODUCT SUSTAINABILITY</span>
-                    </p>
-                    <p>
-                        <span>FREE SHIPPING, FREE RETURNS</span>
-                    </p>
-                    <p>
-                        <span>PAYMENT</span>
-                        
-                    </p>
-                </div><!--expand-->
+                    <p><span>PRODUCT SUSTAINABILITY</span></p>
+                    <p><span>Delivery</span></p>
+                    <p><span>PAYMENT</span></p>
+                </div>
             </div>
         </div><!--product-detail-->
     </div><!--container-->   
