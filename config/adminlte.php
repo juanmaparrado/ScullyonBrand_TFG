@@ -320,6 +320,11 @@ return [
             'url'  => '/photos',
             'icon' => 'fa fa-camera',
         ],
+        [
+            'text' => 'clients view',
+            'url'  => '/',
+            'icon' => 'fa fa-shopping-cart',
+        ]
 
     ],
 

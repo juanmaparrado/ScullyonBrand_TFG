@@ -187,7 +187,7 @@ button:active {
 /*******************services**********************/
 .services{
     width: 100%;
-    background-color: antiquewhite;
+    background-color: #fafafae3;
     border-top:  1px solid rgba(0, 0, 0, 0.4);
     border-bottom: 1px solid rgba(0, 0, 0, 0.4);
 }
@@ -218,7 +218,69 @@ button:active {
 .servi:hover{
     transition: 0.5s;
 }
-
+/*********footer***********/
+footer {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #695F55;
+    width: 100%;
+    padding-top: 40px;
+  
+    color: #fff;
+  }
+  
+  .footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .footer-content h3 {
+    font-size: 2.1rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    line-height: 3rem;
+  }
+  
+  .footer-content p {
+    max-width: 500px;
+    margin: 10px auto;
+    line-height: 28px;
+    font-size: 14px;
+    color: #cacdd2;
+  }
+  
+  .socials {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 3rem 0;
+  }
+  
+  .socials li {
+    margin: 0 10px;
+  }
+  
+  .socials a {
+    text-decoration: none;
+    color: #CE9F69;
+    padding: 5px;
+  }
+  
+  .socials a i {
+    font-size: 1.1rem;
+    width: 20px;
+    transition: color 0.4s ease;
+  }
+  
+  .socials a:hover i {
+    color: #FAFAFA;
+  }
 
 
 /*********************media queries******************************/

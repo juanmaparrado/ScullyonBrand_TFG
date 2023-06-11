@@ -127,6 +127,8 @@ header{
 	cursor: pointer;
 }
 
+/*************media queries*************/
+
 @media(max-width: 1240px){
 	.team{
 		width: 100%;

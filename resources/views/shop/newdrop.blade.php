@@ -77,6 +77,31 @@
                 @endforeach 
             </div>
         </section>
+
+        <footer>
+
+            <div class="footer-content">
+        
+              <h3>Scullyon</h3>
+        
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vitae felis scelerisque, gravida sapien non, cursus augue. Aenean id pretium turpis. Suspendisse eros nunc, sollicitudin nec.</p>
+        
+              <ul class="socials">
+        
+                <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+        
+                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+        
+                <li><a href="#"><i class="fa-brands fa-google-plus"></i></a></li>
+        
+                <li><a href="#"><i class="fa-brands fa-tiktok"></i></a></li>
+        
+                <li><a href="#"><i class="fa-brands fa-linkedin-square"></i></a></li>
+        
+              </ul>
+        
+            </div>
+        </footer>
     </body>
 </html>
         
