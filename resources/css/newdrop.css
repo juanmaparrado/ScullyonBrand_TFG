@@ -63,6 +63,7 @@ header{
 
 section{
 	padding: 100px 8%;
+    margin-bottom: 2%;
 }
 .container{
 	display: grid;
@@ -93,6 +94,7 @@ section{
 }
 .box h5{
 	font-size: 14px;
+	font-weight: 900;
 	letter-spacing: 1px;
 	margin-bottom: 20px;
 }
@@ -102,7 +104,7 @@ section{
 	right: 0;
 	width: 35px;
 	height: 35px;
-	background: #2875f9;
+	background: #695F55;
 	color: white;
 	display: inline-flex;
 	align-items: center;
@@ -111,4 +113,102 @@ section{
 }
 .box:hover{
 	transform: translateY(-5px);
+}
+
+
+/********footer********/
+footer {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #695F55;
+    width: 100%;
+    padding-top: 40px;
+    color: #fff;
+  }
+  
+  .footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    height: 200px;
+  }
+  
+  .footer-content h3 {
+    font-size: 2.1rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    line-height: 3rem;
+  }
+  
+  .footer-content p {
+    max-width: 500px;
+    margin: 10px auto;
+    line-height: 28px;
+    font-size: 14px;
+    color: #cacdd2;
+  }
+  
+  .socials {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 3rem 0;
+  }
+  
+  .socials li {
+    margin: 0 10px;
+  }
+  
+  .socials a {
+    text-decoration: none;
+    color: #CE9F69;
+    padding: 5px;
+  }
+  
+  .socials a i {
+    font-size: 1.1rem;
+    width: 20px;
+    transition: color 0.4s ease;
+  }
+  
+  .socials a:hover i {
+    color: #FAFAFA;
+  }
+
+
+@media(max-width: 960px){
+    header{
+        padding: 15px 2% !important;
+        justify-content: center;
+    }
+    .nav a{
+        font-size: 8px !important;
+    }
+    .nav li{
+        margin-left: 18px;
+    }
+    .log a{
+        display: none;
+        }
+    #profileIcon{
+        display: grid;
+        place-items: center;
+        width: 10px;
+        height: 10px;
+        margin-left: 50px !important;
+    }
+    #logNav{
+        width: 100px;
+        height: 50px;
+    }
+
+	svg{
+		width: 100%;
+		height: 100%;
+	}
 }

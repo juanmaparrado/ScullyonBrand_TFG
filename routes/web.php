@@ -28,9 +28,9 @@ Route::get('/', function () {
 Route::get('/team', function () {
     return view('team');
 });
-Route::get('/drop', function(){
-    return view('shop.newdrop');
-});
+Route::get('/drop', [ProductController::class, 'shopIndex'])->name('drop');
+Route::get('/drop/details/{productId}', [ProductController::class, 'showDetails'])->name('drop.details');
+
 
 
 Route::middleware('auth')->group(function () {
