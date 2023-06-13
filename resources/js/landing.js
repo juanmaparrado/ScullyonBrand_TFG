@@ -1,8 +1,8 @@
 
-const i1 = "";
-const i2 = ""; 
-const i3 = "";
-const i4 = ""; 
+const i1 = "storage/cartel-publicidad.jpg";
+const i2 = "storage/01.png";
+const i3 = "storage/cartel-publicidad.jpg";
+const i4 = "storage/cartel-publicidad.jpg";
 const images = [i1,i2,i3,i4]
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
