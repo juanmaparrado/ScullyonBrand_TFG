@@ -54,15 +54,12 @@ header{
 .nav a:hover{
     border-bottom: 2px solid #E28743;
 }
-#profileIcon{
-        display: none;
-    }
-
-    svg{
+svg{
         position: absolute;
         z-index: -1;
         opacity: 0.7;
 }
+
 /*****************************HERO SECTION ***************************/
 
 .container-main {
@@ -292,19 +289,14 @@ footer {
         font-size: 15px;
         font-weight: 500;
     }
-    .log a{
-        display: none;
-    }
-    #profileIcon{
-        display: grid;
-        place-items: center;
-        width: 60px;
-        height: 60px;
+    .nav li{
+        margin-left: 18px;
     }
     #logNav{
         width: 100px;
         height: 60px;
     }
+
     .container-main{
         height: 0% !important;
     }
@@ -338,15 +330,8 @@ footer {
     .nav li{
         margin-left: 12px;
     }
-    .log a{
+    .adminlink{
         display: none;
-        }
-    #profileIcon{
-        display: grid;
-        place-items: center;
-        width: 10px;
-        height: 10px;
-        margin-left: 50px !important;
     }
     #logNav{
         width: 100px;

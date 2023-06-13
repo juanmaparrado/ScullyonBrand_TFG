@@ -52,10 +52,8 @@ header{
 .nav a:hover{
     border-bottom: 2px solid #E28743;
 }
-#profileIcon{
-        display: none;
-    }
-    svg{
+
+svg{
         position: absolute;
         z-index: -1;
         opacity: 0.9;
@@ -113,6 +111,21 @@ section{
 }
 .box:hover{
 	transform: translateY(-5px);
+}
+
+.btnAdd{
+    background-color: #695F55;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    transition: all .35s ease;
 }
 
 
@@ -181,34 +194,45 @@ footer {
   }
 
 
-@media(max-width: 960px){
+@media(max-width: 1100px){
     header{
-        padding: 15px 2% !important;
-        justify-content: center;
+        padding: 15px 3%;
     }
     .nav a{
-        font-size: 8px !important;
+        font-size: 15px;
+        font-weight: 500;
     }
     .nav li{
         margin-left: 18px;
     }
-    .log a{
-        display: none;
-        }
-    #profileIcon{
-        display: grid;
-        place-items: center;
-        width: 10px;
-        height: 10px;
-        margin-left: 50px !important;
-    }
+
     #logNav{
         width: 100px;
-        height: 50px;
+        height: 60px;
     }
 
 	svg{
 		width: 100%;
 		height: 100%;
 	}
+}
+
+@media(max-width: 790px){
+        header{
+            padding: 15px 2% !important;
+        }
+        .nav a{
+            font-size: 8px !important; 
+            font-weight: 500 !important;
+        }
+        .nav li{
+            margin-left: 12px;
+        }
+        .adminlink{
+            display: none;
+        }
+        #logNav{
+            width: 100px;
+            height: 50px;
+        }
 }

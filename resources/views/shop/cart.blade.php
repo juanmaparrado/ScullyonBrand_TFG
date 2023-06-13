@@ -32,55 +32,29 @@
                 </a>
 
                 <ul class="nav">
-                    <li><a href="{{ url('/collection')}}" class="">COLLECTION</a></li>
+                    <li><a href="{{ url('/collection') }}" class="">COLLECTION</a></li>
                     <li><a href="{{ url('/drop') }}" class="alert">NEW DROP</a></li>
                     <li><a href="{{ url('/team') }}" class="">THE TEAM</a></li>
+
                 </ul>
                 <ul class="log">
                     @auth
                     @role('admin')
-                    <li><a href="{{ url('/dashboard') }}" class="adminlink">Admin</a></li>
+                        <li><a href="{{ url('/dashboard') }}" class="">Admin</a></li>
                     @endrole
-                    <li><a href="{{ route('profile.update')}}"><i class="fa-solid fa-user" id="profileIcon"></i></a></li>
-                    <li><a href="{{route('cart')}}"><i class="fa-solid fa-cart-shopping" id="cartIcon"></i></a></li>
                     @else
                         <li><a href="{{ route('login') }}" class="">Log in</a></li>
 
                         @if (Route::has('register'))
                         <li><a href="{{ route('register') }}" class="">Register</a></li>
-                    @endif
+                        @endif
                     @endauth
+                    <li><i class="fa-solid fa-user" id="profileIcon"></i></li>
+
                 </ul>
             </header>
-        @endif
+        @endif          
         </div>
-
-
-
-        <section class="shop" id="shop">
-            <div class="container">
-                
-                @foreach ($products as $product)
-                <div class="box" >
-                    
-                    @if (isset($product->images) && count($product->images) > 0)
-                    <a href="{{ route('drop.details', ['productId' => $product->id]) }}">
-                        <img src="{{ asset($product->images[0]->url_image) }}">
-                    </a>
-                    @else
-                    <img src=""> 
-                    @endif
-                    <h4>{{ $product->name }}</h4>
-                    <h5>{{ $product->price }}</h5>
-                    <a href="#"><button class="btnAdd">Add to Cart</button></a>
-                    <div class="cart">
-                        <a href="{{ route('drop.details', ['productId' => $product->id]) }}"><i class="fa-solid fa-cart-shopping"></i></a>
-                    </div>
-                </div>
-
-                @endforeach 
-            </div>
-        </section>
 
         <footer>
 
@@ -108,6 +82,3 @@
         </footer>
     </body>
 </html>
-        
-
-        

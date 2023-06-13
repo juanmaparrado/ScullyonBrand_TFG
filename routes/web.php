@@ -8,6 +8,7 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\StoreController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ImageController;
+use App\Http\Controllers\CartController;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 
@@ -34,6 +35,8 @@ Route::get('/drop/details/{productId}', [ProductController::class, 'showDetails'
 Route::get('/collection', function () {
     return view('collection');
 });
+
+Route::get('/cart', [CartController::class ,'index'])->name('cart');
 
 
 

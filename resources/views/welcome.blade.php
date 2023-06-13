@@ -34,16 +34,16 @@
                 <ul class="log">
                     @auth
                     @role('admin')
-                    <li><a href="{{ url('/dashboard') }}" class="">Admin</a></li>
+                    <li><a href="{{ url('/dashboard') }}" class="adminlink">Admin</a></li>
                     @endrole
+                    <li><a href="{{ route('profile.update')}}"><i class="fa-solid fa-user" id="profileIcon"></i></a></li>
+                    <li><a href="{{route('cart')}}"><i class="fa-solid fa-cart-shopping" id="cartIcon"></i></a></li>
                     @else
                         <li><a href="{{ route('login') }}" class="">Log in</a></li>
 
                         @if (Route::has('register'))
                         <li><a href="{{ route('register') }}" class="">Register</a></li>
-                        @endif
-                    <li><i class="fa-solid fa-user" id="profileIcon"></i></li>
-
+                    @endif
                     @endauth
                 </ul>
             </header>
