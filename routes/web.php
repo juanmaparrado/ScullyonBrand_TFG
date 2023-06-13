@@ -7,6 +7,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\StoreController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ImageController;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 
@@ -30,6 +31,9 @@ Route::get('/team', function () {
 });
 Route::get('/drop', [ProductController::class, 'shopIndex'])->name('drop');
 Route::get('/drop/details/{productId}', [ProductController::class, 'showDetails'])->name('drop.details');
+Route::get('/collection', function () {
+    return view('collection');
+});
 
 
 
@@ -48,12 +52,12 @@ Route::middleware('auth')->group(function () {
     Route::resource('stores', StoreController::class);
     Route::get('stores/{store}/staff', [StoreController::class, 'staff'])->name('stores.staff');
     Route::get('/stores/{store}/stocktaking', [StoreController::class, 'stocktaking'])->name('stores.stocktaking');
+    Route::get('/photos', [ImageController::class, 'index'])->name('photos.index');
+    Route::get('/photos/create', [ImageController::class, 'create'])->name('photos.create');
+    Route::post('/photos', [ImageController::class, 'store'])->name('photos.store');
 });
 
-use App\Http\Controllers\ImageController;
 
-Route::get('/photos', [ImageController::class, 'index'])->name('photos.index');
-Route::get('/photos/create', [ImageController::class, 'create'])->name('photos.create');
-Route::post('/photos', [ImageController::class, 'store'])->name('photos.store');
+
 
 require __DIR__.'/auth.php';

@@ -26,7 +26,7 @@
             </a>
 
             <ul class="nav">
-                <li><a href="{{ url('/') }}" class="">COLLECTION</a></li>
+                <li><a href="{{ url('/collection') }}" class="">COLLECTION</a></li>
                 <li><a href="{{ url('/drop') }}" class="alert">NEW DROP</a></li>
                 <li><a href="{{ url('/team') }}" class="">THE TEAM</a></li>
                 @role('admin')
