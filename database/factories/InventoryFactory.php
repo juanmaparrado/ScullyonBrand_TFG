@@ -26,5 +26,6 @@ class InventoryFactory extends Factory
             'store_id' => $this->faker->randomElement($storeIds),
             'product_id' => $this->faker->randomElement($productIds),
             'status' => $this->faker->randomElement(['available', 'unavailable']),
+            'size' => $this->faker->randomElement(['S', 'M','L','XL']),
         ];    }
 }

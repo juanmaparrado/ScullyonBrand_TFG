@@ -13,7 +13,7 @@
         <div class="card-body">
             <form action="{{ route('photos.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
-                <div class="form-group">
+                <div class="form-group"> 
                     <select name="product_id" id="product_id" class="form-control">
                         @foreach ($products as $product)
                             <option value="{{ $product->id }}">{{ $product->name }}</option>
