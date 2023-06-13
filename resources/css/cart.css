@@ -71,14 +71,9 @@ header{
   border-bottom: 1px solid #dadada;
   letter-spacing: 3px;
   text-transform: uppercase;
-  span {
-    font-weight: normal;
-    font-style: italic;
-     text-transform: lowercase;
-    color: #777;
-    
-  }
+  
 }
+
 
 .heading {
   padding: 1em 0;
@@ -137,7 +132,7 @@ p {
     font-weight: bold;
     font-size: 1.25em;
 }
-a.remove {
+.remove {
   text-decoration: none;
   color: #ffffff;
   font-weight: bold;
@@ -153,17 +148,26 @@ a.remove {
     background: #f30;
   }
 
-.btn {
-      text-decoration: none;
-      letter-spacing: -.015em;
-      font-size: 1em;
-      padding: 1em 3em;
-      color: #fff;
-      background: #82ca9c;
-      font-weight: bold;
-      border-radius: 50px;
-        float: right;
-      text-align: right;
+.continue{
+  text-decoration: none;
+  letter-spacing: -.015em;
+  font-size: 1em;
+  padding: 1em 3em;
+  color: #fff;
+  background: #E28743;
+  font-weight: bold;
+  border-radius: 50px;
+    float: right;
+  text-align: right;
+}
+.btnShopping{
+  text-decoration: none;
+  letter-spacing: -.015em;
+  font-size: .75em;
+  padding: 1em 3em;
+  color: #fff;
+  background: #695F55;
+  border-radius: 50px;
 }
 
 /* TOTAL AND CHECKOUT  */
@@ -211,41 +215,24 @@ float: right;
   padding: 1em;
   font-size: 90%;
 }
-.cart {
-  .items {
-
+.itemImg {
+      width: 25%;
+}
   .cartSection {
     width: 90%;
-      display: block;float: left;
-     &.qtyWrap {
-       width: 10%;
-      text-align: center;
-       padding: .5em 0;
-       float: right;
-       &:before {
-         content: "QTY";
-         display: block;
-         padding: .25em;
-         font-size: .75em;
-       }
-     }
-     &.prodTotal , &.removeWrap { 
-       display: none;
-     }
-    .itemImg {
-      width: 25%;
-    }
+    display: block;
+    float: left;
   }
-  }}
 .promoCode , .subtotal{
   width: 100%;
 }
-
-  a.btn.continue {
+.continue {
 width: 100%;
 text-align: center;
 }
+
 }
+
 
 
 @media(max-width:1100px){

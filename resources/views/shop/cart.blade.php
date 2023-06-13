@@ -35,7 +35,7 @@
                     <li><a href="{{ url('/dashboard') }}" class="adminlink">Admin</a></li>
                     @endrole
                     <li><a href="{{ route('profile.update')}}"><i class="fa-solid fa-user" id="profileIcon"></i></a></li>
-                    <li><a href="{{route('cart')}}"><i class="fa-solid fa-cart-shopping" id="cartIcon"></i></a></li>
+                    <li><a href="{{route('cart')}}"><i class="fa-solid fa-cart-shopping" id="cartIcon"></i><span> {{Cart::Count()}}</span></a></li>
                     @else
                         <li><a href="{{ route('login') }}" class="">Log in</a></li>
 
@@ -50,34 +50,50 @@
 
         <div class="wrap cf">
             <h1 class="projTitle">SCULLYON Shopping Cart</h1>
+            @if (session()->has('success_message'))
+            <br><p style="color:rgb(255, 0, 0); width:100%;">{{session()->get('success_message')}}</p>
+            @endif
             <div class="heading cf">
-              <a href="{{route('drop')}}" class="continue">Continue Shopping</a>
+                <a href="{{route('drop')}}" class="btnShopping">Continue Shopping</a>
             </div>
             <div class="cart">
+            @if (Cart::count() > 0)
               <ul class="cartWrap">
+                @foreach (Cart::content() as $item)
                 <li class="items odd">
                     <div class="infoWrap"> 
                         <div class="cartSection">
-                            <img src="" alt="sdgf" class="itemImg" />
-                            <p class="itemNumber">1</p>
-                            <h3 id="nameProduct">Name</h3>
-                            <p> <input type="text"  class="qty" placeholder="1"/> x 5 <!-- price --></p>
+                            <a href="{{ route('drop.details', ['productId' => $item->model->id]) }}">
+                                <h3 id="nameProduct">{{$item->model->name}}</h3>
+                            </a>
+                            <p> <input type="text"  class="qty" placeholder="1"/> x {{$item->model->price}} $</p>
                         </div>  
                         <div class="prodTotal cartSection">
-                            <p>$<!--precio total-->15</p>
+                            <p>${{ $item->model->price }}</p>
                         </div>
                         <div class="cartSection removeWrap">
-                            <a href="#" class="remove">x</a>
+                            <form action=" {{route('cart.destroy',$item->rowId)}}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="remove" >x</button>
+                            </form>
                         </div>
                     </div>
                 </li>
+                @endforeach
               </ul>
+            
+            @else
+              <h1>No Item in cart.</h1>  
+            @endif
             </div>            
             <div class="subtotal cf">
               <ul>
-                <li class="totalRow"><span class="label">Subtotal</span><span class="value">$35.00</span></li>
-                    <li class="totalRow"><span class="label">Shipping</span><span class="value">$0.00</span></li>
-                    <li class="totalRow final"><span class="label">Total</span><span class="value">$35.00</span></li>
+                <li><a href="{{ route('cart.empty')}}">Clear All</a></li>
+                <li class="totalRow"><span class="label">Subtotal</span><span class="value">{{Cart::Subtotal()}} $</span></li>
+                    <li class="totalRow"><span class="label">Shipping</span><span class="value"><del>$0.00</del></span></li>
+                    <li class="totalRow"><span class="label">Tax (21%)</span><span class="value">{{Cart::tax()}}</span></li>
+                    <li class="totalRow final"><span class="label">Total</span><span class="value">{{Cart::total()}} $</span></li>
                     <li class="totalRow"><a href="#" class="btn continue">Checkout</a></li>
               </ul>
             </div>

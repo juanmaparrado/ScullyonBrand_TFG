@@ -42,7 +42,7 @@
                     <li><a href="{{ url('/dashboard') }}" class="adminlink">Admin</a></li>
                     @endrole
                     <li><a href="{{ route('profile.update')}}"><i class="fa-solid fa-user" id="profileIcon"></i></a></li>
-                    <li><a href="{{route('cart')}}"><i class="fa-solid fa-cart-shopping" id="cartIcon"></i></a></li>
+                    <li><a href="{{route('cart')}}"><i class="fa-solid fa-cart-shopping" id="cartIcon"></i></a>{{Cart::count()}}</li>
                     @else
                         <li><a href="{{ route('login') }}" class="">Log in</a></li>
 
@@ -72,9 +72,15 @@
                     @endif
                     <h4>{{ $product->name }}</h4>
                     <h5>{{ $product->price }}</h5>
-                    <a href="#"><button class="btnAdd">Add to Cart</button></a>
+                    <form action="{{ route('cart.store') }}" method="POST">
+                        @csrf
+                        <input type="hidden" name="id" value="{{ $product->id }}">
+                        <input type="hidden" name="name" value="{{ $product->name }}">
+                        <input type="hidden" name="price" value="{{ $product->price }}">
+                        <button type="submit" class="btnAdd">Add to cart</button>
+                    </form> 
                     <div class="cart">
-                        <a href="{{ route('drop.details', ['productId' => $product->id]) }}"><i class="fa-solid fa-cart-shopping"></i></a>
+                        <a href="{{ route('drop.details', ['productId' => $product->id]) }}"><i class="fa-solid fa-cart-shopping"></i></a> -->
                     </div>
                 </div>
 

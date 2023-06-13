@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 
 class CartController extends Controller
@@ -15,43 +16,28 @@ class CartController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
     {
-        //
+        
+        if($request->size == null){
+            Cart::add($request->id, $request->name, 1, $request->price , ['size' => 'L'])
+            ->associate('App\Models\Product');
+        }
+        else{
+            Cart::add($request->id, $request->name, 1, $request->price , ['size' => $request->size])
+            ->associate('App\Models\Product');
+        }
+        //dd(Cart::content());
+        return redirect()->route('cart')->with('success_message', 'Item was added to your cart!');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
+    public function empty()
     {
-        //
-    }
+        Cart::destroy();
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
+        return redirect()->route('cart')->with('success_message', 'Your cart has been cleared!');
     }
 
     /**
@@ -59,6 +45,8 @@ class CartController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Cart::remove($id);
+
+        return back()->with('success_message', 'Item has been removed!');
     }
 }

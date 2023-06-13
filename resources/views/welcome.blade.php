@@ -37,7 +37,7 @@
                     <li><a href="{{ url('/dashboard') }}" class="adminlink">Admin</a></li>
                     @endrole
                     <li><a href="{{ route('profile.update')}}"><i class="fa-solid fa-user" id="profileIcon"></i></a></li>
-                    <li><a href="{{route('cart')}}"><i class="fa-solid fa-cart-shopping" id="cartIcon"></i></a></li>
+                    <li><a href="{{route('cart')}}"><i class="fa-solid fa-cart-shopping" id="cartIcon"></i><span> {{Cart::Count()}}</span></a></li>
                     @else
                         <li><a href="{{ route('login') }}" class="">Log in</a></li>
 
