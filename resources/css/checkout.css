@@ -8,7 +8,6 @@ header{
   justify-content: space-between;
   z-index: 1000;
   padding: 33px 9%;
-  box-shadow: 0 0 10px rgba(56, 56, 56, 0.1);
 }
 .logo{
   width: 100px;
@@ -84,7 +83,6 @@ header{
   }
   
   .screen {
-    margin-top: 5%;
     padding: 2em;
     position: absolute;
     left: 0;
@@ -98,7 +96,7 @@ header{
     background: #FAFAFA;
     overflow-x: hidden;
     overflow-y: auto;
-    box-shadow: 15px 16.1276px rgba(55, 55, 55, 0.11);
+    box-shadow: 5px 6.1276px rgba(55, 55, 55, 0.11);
   }
   
   .card-data > div {
