@@ -20,6 +20,13 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
+        $duplicates = Cart::search(function ($cartItem, $rowId) use ($request) {
+            return $cartItem->id === $request->id;
+        });
+
+        if ($duplicates->isNotEmpty()) {
+            return redirect()->route('cart')->with('success_message', 'Item is already in your cart!');
+        }
         
         if($request->size == null){
             Cart::add($request->id, $request->name, 1, $request->price , ['size' => 'L'])

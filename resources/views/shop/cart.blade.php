@@ -66,6 +66,7 @@
                             <a href="{{ route('drop.details', ['productId' => $item->model->id]) }}">
                                 <h3 id="nameProduct">{{$item->model->name}}</h3>
                             </a>
+                            <p class="itemNumber">Size: {{$item->options->size}}</p><br>
                             <p> <input type="text"  class="qty" placeholder="1"/> x {{$item->model->price}} $</p>
                         </div>  
                         <div class="prodTotal cartSection">

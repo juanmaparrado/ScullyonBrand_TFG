@@ -80,7 +80,7 @@
                         <button type="submit" class="btnAdd">Add to cart</button>
                     </form> 
                     <div class="cart">
-                        <a href="{{ route('drop.details', ['productId' => $product->id]) }}"><i class="fa-solid fa-cart-shopping"></i></a> -->
+                        <a href="{{ route('drop.details', ['productId' => $product->id]) }}"><i class="fa-solid fa-cart-shopping"></i></a>
                     </div>
                 </div>
 
