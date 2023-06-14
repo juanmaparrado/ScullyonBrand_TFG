@@ -165,8 +165,7 @@
           <div class="separation-line"></div>
           <div class="flex-fill flex-vertical right">
             <div>
-              <div class="total-label f-secondary-color">Shipping <span class=""><del> $0.00</del></span></div>
-              <div class="total-label f-secondary-color">Tax (21%)<span class=""> {{Cart::tax()}}</span></div>
+              <div class="total-label f-secondary-color">Shipping <span class="">{{Cart::tax()}}</span></div>
               <div class="value">Total <strong>{{Cart::total()}}</strong></div>
             </div>
           </div>

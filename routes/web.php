@@ -41,7 +41,7 @@ Route::get('/cart', [CartController::class ,'index'])->name('cart');
 Route::post('/cart', [CartController::class ,'store'])->name('cart.store');
 Route::delete('/cart/{product}', [CartController::class ,'destroy'])->name('cart.destroy');
 Route::get('/cart/empty', [CartController::class ,'empty'])->name('cart.empty');
-
+//confirmar pedido
 Route::get('cart/checkout', [CheckoutController::class ,'index'])->name('checkout.index');
 
 

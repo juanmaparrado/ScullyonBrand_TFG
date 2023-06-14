@@ -120,14 +120,23 @@ img {
     cursor: pointer;
 }
 
+#qty{
+    width: 25%;
+    margin: 5px 0 20px 0;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
 .size .button-action {
     display: flex;
     justify-content: right;
     align-items: center;
 }
 
-.size .button-action button {
-    width: 50%;
+.submitAdd {
+    width: 100%;
     padding: 5px 30px;
     border-radius: 5px;
     border: 1px solid black;

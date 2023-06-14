@@ -95,6 +95,11 @@ header{
 .cartSection {
     display: table-cell;
     vertical-align: middle;
+
+}
+
+ .prodTotal {
+  text-align: end;
 }
     
 .itemNumber {
@@ -110,10 +115,7 @@ p {
 }
 
 
-.itemImg {
-    width: 4em;
-    float: left;
-}
+
 
 input.qty {
     width: 2em;
@@ -123,11 +125,7 @@ input.qty {
   margin: 1em .5em 0 0;
     
 }
-.itemImg {
-    width: 8em;
-    display: inline;
-    padding-right: 1em;
-  }  
+ 
 p {
     font-weight: bold;
     font-size: 1.25em;
@@ -201,6 +199,10 @@ float: right;
     width: 35%;
   }
 
+  .prodTotal .cartSection{
+    text-align: right ;
+  }
+
 @media only screen and (max-width:39.375em){
 
 .wrap {
@@ -215,20 +217,26 @@ float: right;
   padding: 1em;
   font-size: 90%;
 }
-.itemImg {
-      width: 25%;
-}
   .cartSection {
     width: 90%;
     display: block;
     float: left;
   }
-.promoCode , .subtotal{
-  width: 100%;
-}
+
 .continue {
 width: 100%;
 text-align: center;
+}
+
+.label {
+  font-size: .65em;
+  text-transform: uppercase;
+  color: #777;
+}
+.value {
+  font-size: .85em;
+  letter-spacing: -.025em;
+  width: 35%;
 }
 
 }
@@ -254,6 +262,27 @@ text-align: center;
 }
 
 @media(max-width: 790px){
+  .wrap {
+    width: 80%;
+    padding: 2% 0;
+  }
+  .projTitle{
+    visibility: hidden;
+  }
+  .heading {
+    padding: 1em;
+    font-size: 90%;
+  }
+
+    .cartSection {
+      width: 90%;
+      display: block;
+      position:relative;
+    }
+  .continue {
+  width: 100%;
+  text-align: center;
+  }
     header{
         padding: 15px 2% !important;
     }
