@@ -9,6 +9,7 @@ use App\Http\Controllers\StoreController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\CheckoutController;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 
@@ -40,6 +41,8 @@ Route::get('/cart', [CartController::class ,'index'])->name('cart');
 Route::post('/cart', [CartController::class ,'store'])->name('cart.store');
 Route::delete('/cart/{product}', [CartController::class ,'destroy'])->name('cart.destroy');
 Route::get('/cart/empty', [CartController::class ,'empty'])->name('cart.empty');
+
+Route::get('cart/checkout', [CheckoutController::class ,'index'])->name('checkout.index');
 
 
 

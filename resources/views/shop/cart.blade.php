@@ -95,7 +95,7 @@
                     <li class="totalRow"><span class="label">Shipping</span><span class="value"><del>$0.00</del></span></li>
                     <li class="totalRow"><span class="label">Tax (21%)</span><span class="value">{{Cart::tax()}}</span></li>
                     <li class="totalRow final"><span class="label">Total</span><span class="value">{{Cart::total()}} $</span></li>
-                    <li class="totalRow"><a href="#" class="btn continue">Checkout</a></li>
+                    <li class="totalRow"><a href="{{route('checkout.index')}}" class="btn continue">Checkout</a></li>
               </ul>
             </div>
           </div>
