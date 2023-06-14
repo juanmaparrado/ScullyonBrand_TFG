@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreign('store_id')->references('id')->on('stores')->onDelete('cascade');
             $table->unsignedBigInteger('product_id');
             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
+            $table->enum('size',['S','M','L','XL']);
             $table->enum('status', ['available', 'unavailable']);
             $table->timestamps();
         });

@@ -35,7 +35,7 @@ dragArea.addEventListener("drop", (event) => {
     displayFile();
     });
 
-
+//boton submit
     document.querySelector("form").addEventListener("submit", function(event) {
         event.preventDefault();
     });

@@ -71,7 +71,7 @@ class StoreController extends Controller
 
     public function stocktaking(Store $store)
     {
-        $inventory = $store->inventories;
+        $inventory = $store->inventories()->with('product.images')->get();
         return view('stores.stocktaking', compact('inventory'));
     }
 

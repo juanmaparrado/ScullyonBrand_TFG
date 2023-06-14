@@ -1,8 +1,8 @@
 
-const i1 = "https://images.unsplash.com/photo-1675257020144-ae2f0369900a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=710&q=80";
-const i2 = "https://images.unsplash.com/photo-1674908850980-13d381e2c5f8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=684&q=80"; 
-const i3 = "https://images.unsplash.com/photo-1675257020144-ae2f0369900a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=710&q=80";
-const i4 = "https://images.unsplash.com/photo-1674908850980-13d381e2c5f8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=684&q=80"; 
+const i1 = "storage/cartel-publicidad.jpg";
+const i2 = "storage/01.png";
+const i3 = "storage/cartel-publicidad.jpg";
+const i4 = "storage/cartel-publicidad.jpg";
 const images = [i1,i2,i3,i4]
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
@@ -38,9 +38,3 @@ translateY: {
 },
 loop: true
 });
-
-
-  
-
-
-

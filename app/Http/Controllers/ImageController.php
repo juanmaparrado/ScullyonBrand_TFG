@@ -6,6 +6,7 @@ use App\Models\Image;
 use App\Models\Product;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
+use Psy\Readline\Hoa\Console;
 
 class ImageController extends Controller
 {
@@ -16,7 +17,7 @@ class ImageController extends Controller
     }
 
     public function create()
-    {
+    { 
         $products = Product::all();
         return view('photos.create',compact('products'));
     }
@@ -24,16 +25,19 @@ class ImageController extends Controller
     public function store(Request $request)
     {
         if ($request->hasFile('photo')) {
-
             $image = $request->file('photo')->store('public');
             $photo = Storage::url($image);
+            
             Image::create([
                 'product_id' => $request->product_id,
                 'url_image' => $photo
             ]);
+            
         }
         return redirect()->route('photos.index');
     }
+ 
 }
+
 
 

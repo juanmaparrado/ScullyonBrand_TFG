@@ -25,35 +25,34 @@
             <path fill="#CE9F69" d="M47.2,-65.9C57.4,-57.5,59.4,-38.7,54.9,-24.5C50.4,-10.2,39.4,-0.5,36.4,12.8C33.4,26.1,38.5,43.1,33.8,43.8C29.1,44.6,14.5,29.1,1.3,27.4C-12,25.7,-24.1,37.7,-34.6,38.8C-45.1,40,-54.2,30.3,-51.4,20.9C-48.7,11.6,-34.2,2.6,-30.8,-10.6C-27.4,-23.9,-35.1,-41.4,-31.8,-52C-28.5,-62.7,-14.2,-66.6,2.1,-69.5C18.5,-72.4,36.9,-74.3,47.2,-65.9Z" transform="translate(180 125)" />
           </svg>
 
-            @if (Route::has('login'))
-            <header>
-                <a href="{{ url('/') }}" class="logo">
-                    <x-application-logo class="w-30 h-20" id="logNav" />
-                </a>
+          @if (Route::has('login'))
+          <header>
+              <a href="{{ url('/') }}" class="logo">
+                  <x-application-logo class="w-30 h-20" id="logNav" />
+              </a>
 
-                <ul class="nav">
-                    <li><a href="{{ url('/') }}" class="">COLLECTION</a></li>
-                    <li><a href="{{ url('/drop') }}" class="alert">NEW DROP</a></li>
-                    <li><a href="{{ url('/team') }}" class="">THE TEAM</a></li>
+              <ul class="nav">
+                  <li><a href="{{ url('/collection')}}" class="">COLLECTION</a></li>
+                  <li><a href="{{ url('/drop') }}" class="alert">NEW DROP</a></li>
+                  <li><a href="{{ url('/team') }}" class="">THE TEAM</a></li>
+              </ul>
+              <ul class="log">
+                  @auth
+                  @role('admin')
+                  <li><a href="{{ url('/dashboard') }}" class="adminlink">Admin</a></li>
+                  @endrole
+                  <li><a href="{{ route('profile.update')}}"><i class="fa-solid fa-user" id="profileIcon"></i></a></li>
+                  <li><a href="{{route('cart')}}"><i class="fa-solid fa-cart-shopping" id="cartIcon"></i><span> {{Cart::Count()}}</span></a></li>
+                  @else
+                      <li><a href="{{ route('login') }}" class="">Log in</a></li>
 
-                </ul>
-                <ul class="log">
-                    @auth
-                    @role('admin')
-                    <li><a href="{{ url('/dashboard') }}" class="">Admin</a></li>
-                    @endrole
-                    <li><i class="fa-solid fa-user" id="profileIcon"></i></li>
-                    @else
-                        <li><a href="{{ route('login') }}" class="">Log in</a></li>
-
-                        @if (Route::has('register'))
-                        <li><a href="{{ route('register') }}" class="">Register</a></li>
-                        @endif
-                    @endauth
-
-                </ul>
-            </header>
-        @endif
+                      @if (Route::has('register'))
+                      <li><a href="{{ route('register') }}" class="">Register</a></li>
+                  @endif
+                  @endauth
+              </ul>
+          </header>
+      @endif
         <section class="team">
             <div class="team-content">
                 <div class="box">

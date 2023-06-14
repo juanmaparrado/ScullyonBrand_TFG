@@ -11,7 +11,7 @@
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script>
-        <script src="https://kit.fontawesome.com/034f62ebdf.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <!-- Styles -->
         <!--Enlace a archivo externo de css-->
         @vite('resources/css/newdrop.css')
@@ -32,28 +32,27 @@
                 </a>
 
                 <ul class="nav">
-                    <li><a href="{{ url('/') }}" class="">COLLECTION</a></li>
+                    <li><a href="{{ url('/collection')}}" class="">COLLECTION</a></li>
                     <li><a href="{{ url('/drop') }}" class="alert">NEW DROP</a></li>
                     <li><a href="{{ url('/team') }}" class="">THE TEAM</a></li>
-
                 </ul>
                 <ul class="log">
                     @auth
                     @role('admin')
-                        <li><a href="{{ url('/dashboard') }}" class="">Admin</a></li>
+                    <li><a href="{{ url('/dashboard') }}" class="adminlink">Admin</a></li>
                     @endrole
+                    <li><a href="{{ route('profile.update')}}"><i class="fa-solid fa-user" id="profileIcon"></i></a></li>
+                    <li><a href="{{route('cart')}}"><i class="fa-solid fa-cart-shopping" id="cartIcon"></i></a>{{Cart::count()}}</li>
                     @else
                         <li><a href="{{ route('login') }}" class="">Log in</a></li>
 
                         @if (Route::has('register'))
                         <li><a href="{{ route('register') }}" class="">Register</a></li>
-                        @endif
+                    @endif
                     @endauth
-                    <li><i class="fa-solid fa-user" id="profileIcon"></i></li>
-
                 </ul>
             </header>
-        @endif          
+        @endif
         </div>
 
 
@@ -62,18 +61,29 @@
             <div class="container">
                 
                 @foreach ($products as $product)
-                <div class="box">
+                <div class="box" >
+                    
                     @if (isset($product->images) && count($product->images) > 0)
-                    <img src="{{ asset($product->images[0]->url_image) }}">
+                    <a href="{{ route('drop.details', ['productId' => $product->id]) }}">
+                        <img src="{{ asset($product->images[0]->url_image) }}">
+                    </a>
                     @else
                     <img src=""> 
                     @endif
                     <h4>{{ $product->name }}</h4>
                     <h5>{{ $product->price }}</h5>
+                    <form action="{{ route('cart.store') }}" method="POST">
+                        @csrf
+                        <input type="hidden" name="id" value="{{ $product->id }}">
+                        <input type="hidden" name="name" value="{{ $product->name }}">
+                        <input type="hidden" name="price" value="{{ $product->price }}">
+                        <button type="submit" class="btnAdd">Add to cart</button>
+                    </form> 
                     <div class="cart">
                         <a href="{{ route('drop.details', ['productId' => $product->id]) }}"><i class="fa-solid fa-cart-shopping"></i></a>
+                    </div>
                 </div>
-            </div>
+
                 @endforeach 
             </div>
         </section>

@@ -15,6 +15,7 @@
         <!-- Styles -->
         <!--Enlace a archivo externo de css-->
         @vite('resources/css/details.css')
+        @vite('resources/js/details.js')
     </head>
 <body>
 
@@ -26,28 +27,30 @@
             </a>
 
             <ul class="nav">
-                <li><a href="{{ url('/') }}" class="">COLLECTION</a></li>
+                <li><a href="{{ url('/collection')}}" class="">COLLECTION</a></li>
                 <li><a href="{{ url('/drop') }}" class="alert">NEW DROP</a></li>
                 <li><a href="{{ url('/team') }}" class="">THE TEAM</a></li>
-                @role('admin')
-                    <li><a href="{{ url('/dashboard') }}" class="">Admin</a></li>
-                @endrole
             </ul>
             <ul class="log">
                 @auth
+                @role('admin')
+                <li><a href="{{ url('/dashboard') }}" class="adminlink">Admin</a></li>
+                @endrole
+                <li><a href="{{ route('profile.update')}}"><i class="fa-solid fa-user" id="profileIcon"></i></a></li>
+                <li><a href="{{route('cart')}}"><i class="fa-solid fa-cart-shopping" id="cartIcon"></i><span> {{Cart::Count()}}</span></a></li>
                 @else
                     <li><a href="{{ route('login') }}" class="">Log in</a></li>
 
                     @if (Route::has('register'))
                     <li><a href="{{ route('register') }}" class="">Register</a></li>
-                    @endif
+                @endif
                 @endauth
-                <li><i class="fa-solid fa-user" id="profileIcon"></i></li>
-
             </ul>
         </header>
-    @endif          
+    @endif     
     </div>
+
+
         <div class="product-detail">
             <div class="pd-images">
                 @foreach ($product->images as $image)
@@ -63,14 +66,21 @@
 
                 <div class="size">
                     <p>SIZE: </p>
-                    <select name="size" id="">
+                    <select name="size" id="sizeSelect">
                         <option value="S">S</option>
                         <option value="M">M</option>
                         <option value="L">L</option>
                         <option value="XL">XL</option>
                     </select>
                     <div class="button-action">
-                        <button>Add to cart</button>
+                        <form action="{{ route('cart.store') }}" method="POST">
+                            @csrf
+                            <input type="hidden" name="id" value="{{ $product->id }}">
+                            <input type="hidden" name="name" value="{{ $product->name }}">
+                            <input type="hidden" name="price" value="{{ $product->price }}">
+                            <input type="hidden" name="size" id="size" value="">
+                            <button type="submit">Add to cart</button>
+                        </form> 
                     </div>
                 </div>
 
@@ -87,7 +97,10 @@
                 </ul>
 
                 <div class="expand">
-                    <p><span>PRODUCT SUSTAINABILITY</span></p>
+                    <p>
+                        <span>PRODUCT SUSTAINABILITY</span>
+                        
+                    </p>En Scullyon miramos por el bienestar del medioambiente.
                     <p><span>Delivery</span></p>
                     <p><span>PAYMENT</span></p>
                 </div>

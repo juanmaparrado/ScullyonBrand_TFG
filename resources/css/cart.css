@@ -1,0 +1,274 @@
+*{ box-sizing:border-box;}
+
+
+header{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    padding: 33px 9%;
+    box-shadow: 0 0 10px rgba(56, 56, 56, 0.1);
+}
+.logo{
+    width: 100px;
+    height: 40px;
+    object-fit: cover;
+} 
+.nav{
+    display: flex;
+}
+.nav a{
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+}
+.nav li{
+    list-style: none;
+    margin-left: 60px;
+}
+.log{
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+}
+.log a{
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+    font-weight: 500;
+    margin-left: 20px;
+}
+.alert{
+    color: #E28743;
+}
+.nav a:hover{
+    border-bottom: 2px solid #E28743;
+}
+
+ img {
+   max-width:100%;
+ }
+
+
+.wrap {
+  width: 75%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 5% 0;
+  margin-bottom: 5em;
+  
+}
+
+.projTitle {
+    font-weight: bold;
+  text-align: center;
+  font-size: 2em;
+  padding: 1em 0;
+  border-bottom: 1px solid #dadada;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  
+}
+
+
+.heading {
+  padding: 1em 0;
+  border-bottom: 1px solid #D0D0D0;
+}
+
+.cart {
+  padding: 1em 0 ;
+}
+.items {
+    display: block;
+    width: 100%;
+    padding: 1.5em;
+}
+.infoWrap {
+    display: table;
+    width: 100%;
+}
+.cartSection {
+    display: table-cell;
+    vertical-align: middle;
+}
+    
+.itemNumber {
+      font-size: .95em;
+       color: #777;
+      margin-bottom: .5em;
+}
+      
+p {
+        display: inline-block;
+        font-size: .85em;
+        color: #777777;
+}
+
+
+.itemImg {
+    width: 4em;
+    float: left;
+}
+
+input.qty {
+    width: 2em;
+    text-align: center;
+    font-size: 1em;
+      padding: .25em;
+  margin: 1em .5em 0 0;
+    
+}
+.itemImg {
+    width: 8em;
+    display: inline;
+    padding-right: 1em;
+  }  
+p {
+    font-weight: bold;
+    font-size: 1.25em;
+}
+.remove {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+  background: #e0e0e0;
+  padding: .5em;
+  font-size: .75em;
+  display: inline-block;
+  border-radius: 100%;
+  line-height: .85;
+
+}
+.remove:hover {
+    background: #f30;
+  }
+
+.continue{
+  text-decoration: none;
+  letter-spacing: -.015em;
+  font-size: 1em;
+  padding: 1em 3em;
+  color: #fff;
+  background: #E28743;
+  font-weight: bold;
+  border-radius: 50px;
+    float: right;
+  text-align: right;
+}
+.btnShopping{
+  text-decoration: none;
+  letter-spacing: -.015em;
+  font-size: .75em;
+  padding: 1em 3em;
+  color: #fff;
+  background: #695F55;
+  border-radius: 50px;
+}
+
+/* TOTAL AND CHECKOUT  */
+.subtotal {
+float: right;
+ width: 35%;
+}
+.totalRow {
+    padding: .5em;
+   text-align: right;
+}
+
+.final {
+    font-size: 1.25em;
+    font-weight: bold;
+  }
+  span {
+    display: inline-block;
+    padding: 0 0 0 1em;
+    text-align: right;
+   
+  }
+  .label {
+    font-size: .85em;
+    text-transform: uppercase;
+    color: #777;
+  }
+  .value {
+
+    letter-spacing: -.025em;
+    width: 35%;
+  }
+
+@media only screen and (max-width:39.375em){
+
+.wrap {
+  width: 98%;
+  padding: 2% 0;
+}
+.projTitle{
+  font-size: 1.5em;
+  padding: 10% 5%;
+}
+.heading {
+  padding: 1em;
+  font-size: 90%;
+}
+.itemImg {
+      width: 25%;
+}
+  .cartSection {
+    width: 90%;
+    display: block;
+    float: left;
+  }
+.promoCode , .subtotal{
+  width: 100%;
+}
+.continue {
+width: 100%;
+text-align: center;
+}
+
+}
+
+
+
+@media(max-width:1100px){
+    header{
+        padding: 15px 3%;
+    }
+    .nav a{
+        font-size: 15px;
+        font-weight: 500;
+    }
+    .nav li{
+        margin-left: 18px;
+    }
+
+    #logNav{
+        width: 100px;
+        height: 60px;
+    }
+}
+
+@media(max-width: 790px){
+    header{
+        padding: 15px 2% !important;
+    }
+    .nav a{
+        font-size: 8px !important; 
+        font-weight: 500 !important;
+    }
+    .nav li{
+        margin-left: 12px;
+    }
+    .adminlink{
+        display: none;
+    }
+    #logNav{
+        width: 100px;
+        height: 50px;
+    }
+}
