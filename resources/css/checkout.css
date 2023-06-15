@@ -132,11 +132,11 @@ header{
   }
   .card-number-field * { line-height: 1; margin: 0; padding: 0;}
   .card-number-field input { 
-    width: 4em;
-    height: 100%;
+    border: 1px transparent solid;
+    text-align: center;
+    width: 75%;
     padding: .5em 0;
     margin: 0 .75em;
-    border: none;
     color: #888888;
     background: transparent;
     text-align: right;

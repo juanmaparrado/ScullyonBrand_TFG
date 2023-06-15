@@ -24,27 +24,24 @@ use Spatie\Permission\Models\Role;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/team', function () {
-    return view('team');
-});
+Route::get('/', function () {return view('welcome');});
+Route::get('/team', function () {return view('team');});
 Route::get('/drop', [ProductController::class, 'shopIndex'])->name('drop');
 Route::get('/drop/details/{productId}', [ProductController::class, 'showDetails'])->name('drop.details');
-Route::get('/collection', function () {
-    return view('collection');
-});
+Route::get('/collection', function () {return view('collection');});
 
+Route::middleware('auth')->group(function () {
 Route::get('/cart', [CartController::class ,'index'])->name('cart');
 Route::post('/cart', [CartController::class ,'store'])->name('cart.store');
 Route::delete('/cart/{product}', [CartController::class ,'destroy'])->name('cart.destroy');
 Route::get('/cart/empty', [CartController::class ,'empty'])->name('cart.empty');
-//confirmar pedido
 Route::get('cart/checkout', [CheckoutController::class ,'index'])->name('checkout.index');
+});
 
+//confirmar pedido
 
+//EN DESARROLLO
+Route::post('cart/checkout', [CheckoutController::class , 'store'])->name('checkout.store');
 
 
 Route::middleware('auth')->group(function () {
@@ -53,19 +50,21 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::middleware('auth')->group(function () {
+Route::middleware('auth','role:admin')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('categories', CategoryController::class);
     Route::resource('products', ProductController::class);
     Route::get('products/{product}/reviews', [ProductController::class, 'showReviews'])->name('products.reviews');
     Route::resource('orders', OrderController::class);
     Route::resource('stores', StoreController::class);
-    Route::get('stores/{store}/staff', [StoreController::class, 'staff'])->name('stores.staff');
     Route::get('/stores/{store}/stocktaking', [StoreController::class, 'stocktaking'])->name('stores.stocktaking');
+    Route::get('stores/{store}/staff', [StoreController::class, 'staff'])->name('stores.staff');
     Route::get('/photos', [ImageController::class, 'index'])->name('photos.index');
     Route::get('/photos/create', [ImageController::class, 'create'])->name('photos.create');
     Route::post('/photos', [ImageController::class, 'store'])->name('photos.store');
 });
+
+
 
 
 

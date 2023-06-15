@@ -19,17 +19,5 @@ class RolePermisionSeeder extends Seeder
             //CREO LOS ROLES
             $admin  =   Role::create(['name' => 'admin']);
             $staff =  Role::create(['name' => 'staff']);
-
-            // Crear permiso para el acceso al panel de administración
-            $adminAccessPermission = Permission::create(['name' => 'access admin panel']);
-            $admin->givePermissionTo(Permission::all());
-
-            // Crear permiso para el acceso al panel de tienda
-            $staffAccessPermission = Permission::create(['name' => 'access staff dashboard']);
-            $staff->givePermissionTo('access staff dashboard');
-
-            foreach (Staff::all() as $staffUser) {
-                $staffUser->assignRole('staff');
-            }
     }
 }

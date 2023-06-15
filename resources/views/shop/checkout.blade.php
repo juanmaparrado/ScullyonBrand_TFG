@@ -50,7 +50,8 @@
         </div>
 
         <div class="screen flex-center">
-        <form class="popup flex p-lg">
+        <form class="popup flex p-lg" action="{{route('checkout.store')}}" method="POST">
+          @csrf
             <!-- CARD FORM -->
             <div class="flex-fill flex-vertical">
                 <div class="card-data flex-fill flex-vertical">
@@ -61,7 +62,7 @@
                     </div>
                     <div class="card-property-value">
                       <div class="input-container">
-                        <input id="email" type="text" class="" placeholder="email@example.com">
+                        <input name="email" id="email" type="text" class="" placeholder="email@example.com">
                       </div>
                     </div>
                   </div>
@@ -73,7 +74,7 @@
                     </div>
                     <div class="card-property-value">
                       <div class="input-container">
-                        <input id="city" type="text" class="" placeholder="City">
+                        <input name="city" id="city" type="text" class="" placeholder="City">
                       </div>
                     </div>
                   </div>
@@ -84,7 +85,7 @@
                     </div>
                     <div class="card-property-value">
                       <div class="input-container">
-                        <input id="adress" type="text" class="" placeholder="Example of street, X">
+                        <input id="address" name="address" type="text" class="" placeholder="Example of street, X">
                       </div>
                     </div>
                   </div>
@@ -95,7 +96,7 @@
                     </div>
                     <div class="card-property-value">
                       <div class="input-container">
-                        <input id="adress" type="text" class="" placeholder="XXX XX XX XX">
+                        <input id="phone" name="phone" type="text" class="" placeholder="XXX XX XX XX">
                       </div>
                     </div>
                   </div>
@@ -113,10 +114,7 @@
                     <div class="card-number flex-vertical-center flex-fill">
                     <div class="card-number-field flex-vertical-center flex-fill">
                 
-                    <input class="numbers" type="number" placeholder="0000">-
-                    <input class="numbers" type="number" placeholder="0000">-
-                    <input class="numbers" type="number" placeholder="0000">-
-                    <input class="numbers" type="number" placeholder="0000">
+                    <input class="numbers" name="cardNumber" id="cardNumber" type="number" placeholder="0000-0000-0000-0000">
                 </div>
             </div>
           </div>
@@ -129,11 +127,11 @@
             </div>
             <div class="card-property-value flex-vertical-center">
               <div class="input-container half-width">
-                <input class="numbers"  type="number" min="1" max="12" step="1" placeholder="MM">  
+                <input class="numbers" name="month"  id="month" type="number" min="1" max="12" step="1" placeholder="MM">  
               </div>
               <span class="m-md">/</span>
               <div class="input-container half-width">
-                <input class="numbers" type="number" min="23" max="99" step="1" placeholder="YY">
+                <input class="numbers" name="year" id="year" type="number" min="23" max="99" step="1" placeholder="YY">
               </div>
             </div>
           </div>
@@ -158,7 +156,7 @@
             </div>
             <div class="card-property-value">
               <div class="input-container">
-                <input id="name" data-bound="name_mock" data-def="Mr. Cardholder" type="text" class="uppercase" placeholder="CARDHOLDER NAME">
+                <input id="cardName" name="cardName" type="text" class="uppercase" placeholder="CARDHOLDER NAME">
               </div>
             </div>
           </div>
