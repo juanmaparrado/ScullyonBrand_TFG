@@ -58,9 +58,7 @@ class CartController extends Controller
         return back()->with('success_message', 'Item has been removed!');
     }
 
-    public function update(Request $request){
-        return $request->all();
-    }
+
 
 
 

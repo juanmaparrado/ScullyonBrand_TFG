@@ -22,7 +22,7 @@ class OrderFactory extends Factory
         return [
             'user_id' => $this->faker->randomElement($userIds),
             'status' => $this->faker->randomElement(['processing', 'shipping', 'completed', 'declined', 'cancelled']),
-            'payment_method' => $this->faker->randomElement(['credit_card', 'paypal']),
+            'payment_method' => $this->faker->randomElement(['credit_card']),
             'total' => $this->faker->randomFloat(2, 10, 1000),
             'address' => $this->faker->address(),
             'city' => $this->faker->city(),

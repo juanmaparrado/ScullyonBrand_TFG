@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        Store::factory()->count(3)->create();
         $this->call([
             RolePermisionSeeder::class,
             UserSeeder::class,
@@ -30,12 +31,11 @@ class DatabaseSeeder extends Seeder
         ]);
         //Category::factory()->count(10)->create();
         //Product::factory()->count(20)->create();
+        //Image::factory()->count(40)->create();
         Review::factory()->count(20)->create();
-        Store::factory()->count(3)->create();
-        Staff::factory()->count(10)->create();
+        Staff::factory()->count(5)->create();
         Inventory::factory()->count(50)->create();
         Order::factory()->count(20)->create();
-        //Image::factory()->count(40)->create();
         OrderItem::factory()->count(50)->create();
     }
 }

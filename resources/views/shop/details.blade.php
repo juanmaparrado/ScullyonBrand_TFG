@@ -107,7 +107,7 @@
                     <p>
                         <span>PRODUCT SUSTAINABILITY</span>
                         
-                    </p>En Scullyon miramos por el bienestar del medioambiente.
+                    </p>
                     <p><span>Delivery</span></p>
                     <p><span>PAYMENT</span></p>
                 </div>
