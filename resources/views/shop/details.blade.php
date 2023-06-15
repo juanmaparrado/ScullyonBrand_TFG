@@ -72,14 +72,21 @@
                         <option value="L">L</option>
                         <option value="XL">XL</option>
                     </select>
+                    <p>Quantity: </p>
+                    <select id="qty">
+                        <option value="1" selected>1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
                     <div class="button-action">
                         <form action="{{ route('cart.store') }}" method="POST">
                             @csrf
                             <input type="hidden" name="id" value="{{ $product->id }}">
                             <input type="hidden" name="name" value="{{ $product->name }}">
                             <input type="hidden" name="price" value="{{ $product->price }}">
-                            <input type="hidden" name="size" id="size" value="">
-                            <button type="submit">Add to cart</button>
+                            <input type="hidden" name="size" id="size">
+                            <input type="hidden" name="quantity" id="quantity">
+                            <button type="submit" class="submitAdd">Add to cart</button>
                         </form> 
                     </div>
                 </div>

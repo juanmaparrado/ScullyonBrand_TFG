@@ -66,8 +66,11 @@
                             <a href="{{ route('drop.details', ['productId' => $item->model->id]) }}">
                                 <h3 id="nameProduct">{{$item->model->name}}</h3>
                             </a>
-                            <p class="itemNumber">Size: {{$item->options->size}}</p><br>
-                            <p> <input type="text"  class="qty" placeholder="1"/> x {{$item->model->price}} $</p>
+                            
+                            @foreach ($item->options as $key => $value)
+                                <p class="itemNumber">Size:  {{ $value }}</p> <br>
+                            @endforeach
+                            <p> {{$item->qty }} x {{$item->model->price}} $</p>
                         </div>  
                         <div class="prodTotal cartSection">
                             <p>${{ $item->model->price }}</p>
@@ -92,10 +95,9 @@
               <ul>
                 <li><a href="{{ route('cart.empty')}}">Clear All</a></li>
                 <li class="totalRow"><span class="label">Subtotal</span><span class="value">{{Cart::Subtotal()}} $</span></li>
-                    <li class="totalRow"><span class="label">Shipping</span><span class="value"><del>$0.00</del></span></li>
-                    <li class="totalRow"><span class="label">Tax (21%)</span><span class="value">{{Cart::tax()}}</span></li>
+                    <li class="totalRow"><span class="label">Shipping</span><span class="value">{{Cart::tax()}}</span></li>
                     <li class="totalRow final"><span class="label">Total</span><span class="value">{{Cart::total()}} $</span></li>
-                    <li class="totalRow"><a href="#" class="btn continue">Checkout</a></li>
+                    <li class="totalRow"><a href="{{route('checkout.index')}}" class="btn continue">Checkout</a></li>
               </ul>
             </div>
           </div>
