@@ -28,12 +28,13 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             CategorySeeder::class,
             ProductSeeder::class,
+            StaffSeeder::class,
         ]);
         //Category::factory()->count(10)->create();
         //Product::factory()->count(20)->create();
         //Image::factory()->count(40)->create();
+        //Staff::factory()->count(5)->create();
         Review::factory()->count(20)->create();
-        Staff::factory()->count(5)->create();
         Inventory::factory()->count(50)->create();
         Order::factory()->count(20)->create();
         OrderItem::factory()->count(50)->create();
