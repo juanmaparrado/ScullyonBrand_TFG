@@ -24,7 +24,9 @@ jobs:
         uses: docker/login-action@v2
         with:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
-          password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+          password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}       
+      - name: Clear Docker build cache
+        run: docker builder prune --all --force --filter "until=24h"
       -
         name: Build and push
         uses: docker/build-push-action@v4
