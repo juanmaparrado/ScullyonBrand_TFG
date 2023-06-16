@@ -56,7 +56,6 @@ Route::middleware('auth','role:admin')->group(function () {
     Route::resource('products', ProductController::class);
     Route::get('products/{product}/reviews', [ProductController::class, 'showReviews'])->name('products.reviews');
     Route::resource('orders', OrderController::class);
-    Route::resource('stores', StoreController::class);
     Route::get('stores/{store}/staff', [StoreController::class, 'staff'])->name('stores.staff');
     Route::get('/photos', [ImageController::class, 'index'])->name('photos.index');
     Route::get('/photos/create', [ImageController::class, 'create'])->name('photos.create');
@@ -64,9 +63,7 @@ Route::middleware('auth','role:admin')->group(function () {
 });
 Route::middleware('auth','role:admin|staff')->group(function () {
     Route::get('/stores/{store}/stocktaking', [StoreController::class, 'stocktaking'])->name('stores.stocktaking');
+    Route::resource('stores', StoreController::class);
 });
-
-
-
 
 require __DIR__.'/auth.php';

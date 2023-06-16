@@ -7,6 +7,7 @@
 
 @section('content')
 <x-app-layout>
+        @role('admin')
         <div style="display: grid; place-items: center;">
             <a href="{{ route('stores.create') }}" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Create Store</a>
         </div>
@@ -32,12 +33,12 @@
                                     <td class="px-6 py-4 whitespace-nowrap">{{ $store->phone }}</td>
                                     <td class="px-6 py-4 whitespace-nowrap">
                                         <div class="flex">
-                                            <x-primary-button><a href="{{ route('stores.edit', $store->id) }}" class="">Edit</a></x-primary-button>
-                                            <form action="{{ route('stores.destroy', $store->id) }}" method="POST" class="inline">
-                                                @csrf
-                                                @method('DELETE')
-                                                <x-danger-button type="submit" class="text-red-500 hover:text-red-600 ml-4">Delete</x-danger-button>
-                                            </form>
+                                        <x-primary-button><a href="{{ route('stores.edit', $store->id) }}" class="">Edit</a></x-primary-button>
+                                        <form action="{{ route('stores.destroy', $store->id) }}" method="POST" class="inline">
+                                            @csrf
+                                            @method('DELETE')
+                                            <x-danger-button type="submit" class="text-red-500 hover:text-red-600 ml-4">Delete</x-danger-button>
+                                        </form>
                                         </div>
                                     </td>
                                 </tr>
@@ -73,6 +74,7 @@
                     </tbody>
                 </table>
             </div>
+            @endrole
             <div class=" shadow sm:rounded-lg">
                 <table class="">
                     <thead class="bg-gray-50">
@@ -98,6 +100,5 @@
                 </table>
             </div>
         </div>
-
 </x-app-layout>
 @stop

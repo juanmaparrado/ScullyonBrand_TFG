@@ -91,6 +91,7 @@ return [
             'class' => '',
             'width' => 50,
             'height' => 50,
+            'url'  => '/dashboard',
         ],
     ],
 
