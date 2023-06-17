@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\StaffController;
+use App\Models\Staff;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 
@@ -60,6 +62,8 @@ Route::middleware('auth','role:admin')->group(function () {
     Route::get('/photos', [ImageController::class, 'index'])->name('photos.index');
     Route::get('/photos/create', [ImageController::class, 'create'])->name('photos.create');
     Route::post('/photos', [ImageController::class, 'store'])->name('photos.store');
+    Route::get('staff', [StaffController::class, 'create'])->name('staff.create');
+    Route::post('staff', [StaffController::class, 'store'])->name('staff.store');
 });
 Route::middleware('auth','role:admin|staff')->group(function () {
     Route::get('/stores/{store}/stocktaking', [StoreController::class, 'stocktaking'])->name('stores.stocktaking');
