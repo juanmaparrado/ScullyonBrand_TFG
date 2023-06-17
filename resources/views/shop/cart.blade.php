@@ -18,7 +18,7 @@
     </head>
     <body class="antialiased">       
         <div id="container" class="container-main" >
-            @if (Route::has('login'))
+        @if (Route::has('login'))
             <header>
                 <a href="{{ url('/') }}" class="logo">
                     <x-application-logo class="w-30 h-20" id="logNav" />
@@ -32,8 +32,14 @@
                 <ul class="log">
                     @auth
                     @role('admin')
-                    <li><a href="{{ url('/dashboard') }}" class="adminlink">Admin</a></li>
+                        <li><a href="{{ url('/dashboard') }}" class="adminlink">Admin</a></li>
                     @endrole
+                    @role('staff')
+                        <li><a href="{{ url('/stores') }}" class="adminlink">Stocktaking</a></li>
+                    @endrole
+                    @auth
+                        <a href="{{ route('profile.update')}}">{{Auth::user()->name}}</a>
+                    @endauth
                     <li><a href="{{ route('profile.update')}}"><i class="fa-solid fa-user" id="profileIcon"></i></a></li>
                     <li><a href="{{route('cart')}}"><i class="fa-solid fa-cart-shopping" id="cartIcon"></i><span> {{Cart::Count()}}</span></a></li>
                     @else
@@ -45,7 +51,7 @@
                     @endauth
                 </ul>
             </header>
-        @endif          
+        @endif 
         </div>
 
         <div class="wrap cf">

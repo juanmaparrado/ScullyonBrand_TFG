@@ -33,7 +33,7 @@
                             <input type="text" name="phone" id="phone" class="w-full border-gray-300 rounded-md" value="{{ $store->phone }}" required>
                         </div>
                         <div class="mt-6">
-                            <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Update</button>
+                            <button type="submit" class="bg-green-500  text-white font-bold py-2 px-4 rounded">Update</button>
                             <a href="{{ route('stores.index') }}" class="text-blue-500 hover:text-blue-600 ml-4">Back</a>
                         </div>
                     </form>

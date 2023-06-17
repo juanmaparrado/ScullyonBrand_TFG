@@ -123,6 +123,22 @@ header{
 /*************media queries*************/
 
 @media(max-width: 1240px){
+	header{
+        padding: 0;
+        padding-top: 40px;
+        padding-right: 2%;
+    }
+    .nav a{
+        font-weight: 500;
+    }
+    .nav li{
+        margin-left: 18px;
+    }
+
+    #logNav{
+        width: 100px;
+        height: 60px;
+    }
 	.team{
 		width: 100%;
 		height: auto;
@@ -134,21 +150,24 @@ header{
 
 
 @media(max-width: 790px){
-		header{
-			padding: 15px 2% !important;
-		}
-		.nav a{
-			font-size: 8px !important; 
-			font-weight: 500 !important;
-		}
-		.nav li{
-			margin-left: 12px;
-		}
-		.adminlink{
-			display: none;
-		}
-		#logNav{
-			width: 100px;
-			height: 50px;
-		}
+	header{
+        padding: 0;
+        padding-top: 40px;
+        padding-right: 2%;
+    }
+    .log a{
+        font-size: 0.5em;
+    }
+    .nav a{
+        font-size: 0.5em !important; 
+        font-weight: 500 !important;
+    }
+
+    .adminlink{
+        display: none;
+    }
+    #logNav{
+        width: 100px;
+        height: 50px;
+    }
 }

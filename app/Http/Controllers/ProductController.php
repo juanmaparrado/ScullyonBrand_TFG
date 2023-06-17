@@ -29,7 +29,7 @@ class ProductController extends Controller
             'name' => 'required',
             'price' => 'required',
             'stock' => 'required',
-            'url_image' => 'required',
+            'description' => 'required',
             'category_id' => 'required',
         ]);
 
@@ -50,7 +50,7 @@ class ProductController extends Controller
             'name' => 'required',
             'price' => ['required','numeric'],
             'stock' => 'required',
-            'url_image' => 'required',
+            'description' => 'required',
             'category_id' => 'required',
         ]);
 

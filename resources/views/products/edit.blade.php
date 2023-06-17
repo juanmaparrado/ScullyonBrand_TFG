@@ -30,8 +30,8 @@
                     </div>
 
                     <div class="mb-4">
-                        <label for="url_image" class="block text-sm font-medium text-gray-700">Image URL</label>
-                        <input type="text" name="url_image" id="url_image" class="form-input mt-1 block w-full" value="{{ $product->url_image }}" required>
+                        <label for="description" class="block text-sm font-medium text-gray-700">description</label>
+                        <input type="text" name="description" id="description" class="form-input mt-1 block w-full" value="{{ $product->description }}" required>
                     </div>
 
                     <div class="mb-4">
