@@ -92,27 +92,55 @@
                 </div>
 
                 <ul>
-                    <li>Collection, 360° Show.</li>
                     <li>This item is unisex</li>
                     <li>Oversize fit</li>
-                    <li>Attached hood</li>
-                    <li>2 slash pockets at front</li>
-                    <li>Adjustable buttoning at waist</li>
                     <li>Made in Spain</li>
                     <li>Dry cleaning</li>
                     <li>Material: 100% cotton</li>
                 </ul>
 
                 <div class="expand">
-                    <p>
-                        <span>PRODUCT SUSTAINABILITY</span>
-                        
-                    </p>
+                    <p><span>PRODUCT SUSTAINABILITY</span></p>
+                    Your style, our commitment. At Scullyon, we care about the environment.
+                     That's why every garment we design combines fashion and sustainability for a brighter future.
                     <p><span>Delivery</span></p>
-                    <p><span>PAYMENT</span></p>
+                    We take care of every detail of your delivery. 
+                    At Scullyon, we strive to deliver your purchases safely and guarantee an exceptional experience.
+                    Delivery time:3 to 7 business days.
+                    <p><span>PAYMENT & RETURNS</span></p>
+                    Hassle-free and easy returns. If you're not completely satisfied with your purchase, 
+                    Scullyon offers a simple and convenient return process to ensure your satisfaction.
                 </div>
             </div>
         </div><!--product-detail-->
-    </div><!--container-->   
+    </div><!--container--> 
+
+
+    <section id="testimonials">
+        <!--heading--->
+        <div class="testimonial-heading">
+            <span>Reviews</span>
+        </div>
+        <div class="testimonial-box-container">
+            @foreach ( $reviews as $review )
+            <div class="testimonial-box">
+                <!--top------------------------->
+                <div class="box-top">
+                    <!--profile----->
+                    <div class="profile">
+                        <!--name-and-username-->
+                        <div class="name-user">
+                            <strong>{{$review->user->name}}</strong>
+                            <span>{{$review->user->email}}</span>
+                        </div>
+                    </div>
+                    <div class="client-comment">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, quaerat quis? Provident temporibus architecto asperiores nobis maiores nisi a. Quae doloribus ipsum aliquam tenetur voluptates incidunt blanditiis sed atque cumque.</p>
+                    </div>
+                </div>
+            </div>
+            @endforeach
+        </div>
+    </section>
 </body>
 </html>

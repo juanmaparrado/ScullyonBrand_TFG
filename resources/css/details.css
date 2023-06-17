@@ -6,8 +6,6 @@
 }
 
 :root {
-    --black: #0a0a0a;
-    --white: #f5f5f5;
     --header-height: 60px;
 }
 
@@ -67,6 +65,7 @@ img {
     display: block;
     width: 100%;
 }
+
 
 .product-detail {
     display: flex;
@@ -185,47 +184,148 @@ img {
     font-size: 15px;
 }
 
+/********reviewarea***********/
+#testimonials{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width:100%;
+}
+.testimonial-heading{
+    letter-spacing: 1px;
+    margin: 30px 0px;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.testimonial-heading h1{
+    font-size: 2.2rem;
+    font-weight: 500;
+    background-color: #202020;
+    color: #ffffff;
+    padding: 10px 20px;
+}
+.testimonial-heading span{
+    font-size: 1.3rem;
+    color: #252525;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+.testimonial-box-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width:100%;
+}
+.testimonial-box{
+    width:500px;
+    box-shadow: 2px 2px 30px rgba(0,0,0,0.1);
+    background-color: #ffffff;
+    padding: 20px;
+    margin: 15px;
+    cursor: pointer; 
+}
+
+.profile{
+    display: flex;
+    align-items: center;
+}
+.name-user{
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+}
+.name-user strong{
+    color: #3d3d3d;
+    font-size: 1em;
+}
+.name-user span{
+    color: #979797;
+    font-size: 0.8rem;
+}
+.reviews{
+    color: #f9d71c;
+}
+.box-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.client-comment p{
+    font-size: 0.9rem;
+    color: #4b4b4b;
+}
+.testimonial-box:hover{
+    transform: translateY(-10px);
+    transition: all ease 0.3s;
+}
+ 
+@media(max-width:1060px){
+    .testimonial-box{
+        width:45%;
+        padding: 10px;
+    }
+}
+@media(max-width:790px){
+    .testimonial-box{
+        width:100%;
+    }
+    .testimonial-heading h1{
+        font-size: 1.4rem;
+    }
+}
+@media(max-width:340px){
+    .box-top{
+        flex-wrap: wrap;
+        margin-bottom: 10px;
+    }
+    .reviews{
+        margin-top: 10px;
+    }
+}
+
+
 
 
 /*********************media queries******************************/
 @media(max-width:1100px){
-        header{
-            padding: 15px 3%;
-        }
-        .nav a{
-            font-size: 15px;
-            font-weight: 500;
-        }
-        .nav li{
-            margin-left: 18px;
-        }
-        #logNav{
-            width: 100px;
-            height: 60px;
-        }
-    
-        .container-main{
-            height: 0% !important;
-        }
-        .container-main img{
-            width:100% !important;
-            height: auto !important;
-            opacity: 0.8;
-        }
+    header{
+        padding: 0;
+        padding-top: 20px;
+        padding-right: 2%;
+    }
+    .nav a{
+        font-weight: 500;
+    }
+    .nav li{
+        margin-left: 18px;
+    }
 
-
+    #logNav{
+        width: 100px;
+        height: 60px;
+    }
 }
 @media(max-width: 790px){
     header{
-        padding: 15px 2% !important;
+        padding: 0;
+        padding-top: 20px;
+        padding-right: 2%;
+    }
+    .log a{
+        font-size: 0.5em;
     }
     .nav a{
-        font-size: 8px !important; 
+        font-size: 0.5em !important; 
         font-weight: 500 !important;
     }
-    .nav li{
-        margin-left: 12px;
-    }
+
     .adminlink{
         display: none;
     }
@@ -233,34 +333,12 @@ img {
         width: 100px;
         height: 50px;
     }
-    .container-main{
-        height: 0% !important;
+    .product-detail {
+        display: grid;
+        justify-content: center;
+        align-items: flex-start;
     }
-    .container-main img{
-        width:100% !important;
-        height: auto !important;
-        opacity: 0.8;
-    }
-    #sec-01{
-        height: 0% !important;
-    }
-    .content{
-        flex-direction: column;
-        padding-top: 10%;
-        padding-bottom: 10%;
-    }
-    .content .image{
-        position: relative;
-        width: 300px;
-        height: 200px ;
-        overflow: hidden; 
-    }
-    .content .text-box{
-        max-width: none;
-        transform: translate(0px,0px);
-        backdrop-filter: none;
-        border: transparent;
-    }
+    
 }
 
 

@@ -19,7 +19,7 @@
     </head>
     <body class="antialiased">
            
-        <div id="container" class="container-main" >
+        <div id="container" class="container-main" style="position: absolute" >
             @if (Route::has('login'))
             <header>
                 <a href="{{ url('/') }}" class="logo">
@@ -48,8 +48,10 @@
                 </ul>
             </header>
         @endif
-            
+            <img src="{{ asset('storage\ALLcollection.jpg') }}" width="300" height="300" alt="Descripción de la imagen">
+
         </div>
+
         
 
     </body>
