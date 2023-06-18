@@ -33,6 +33,9 @@ Tendremos un control de acceso de usuarios,staff y administradores.Cada una de e
 Usuario de prueba admin : juanma@example.com contraseña: juanma123;
 Usuario de prueba staff : anacg@example.com contraseña: 12345678;
 
+## VIDEO 
+Video recorrido por la app.
+https://youtu.be/vtIampCSDro
 
 ## Bibliografia
 https://laravel.com/docs/10.x/readme
