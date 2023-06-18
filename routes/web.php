@@ -62,12 +62,17 @@ Route::middleware('auth','role:admin')->group(function () {
     Route::get('/photos', [ImageController::class, 'index'])->name('photos.index');
     Route::get('/photos/create', [ImageController::class, 'create'])->name('photos.create');
     Route::post('/photos', [ImageController::class, 'store'])->name('photos.store');
+    Route::post('/photos', [ImageController::class, 'destroy'])->name('photos.destroy');
     Route::get('staff', [StaffController::class, 'create'])->name('staff.create');
     Route::post('staff', [StaffController::class, 'store'])->name('staff.store');
 });
 Route::middleware('auth','role:admin|staff')->group(function () {
     Route::get('/stores/{store}/stocktaking', [StoreController::class, 'stocktaking'])->name('stores.stocktaking');
     Route::resource('stores', StoreController::class);
+});
+
+Route::fallback(function () {
+    return view('welcome');
 });
 
 require __DIR__.'/auth.php';

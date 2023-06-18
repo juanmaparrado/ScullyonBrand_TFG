@@ -48,11 +48,7 @@
                 </ul>
             </header>
         @endif
-            <img src="{{ asset('storage\ALLcollection.jpg') }}" width="300" height="300" alt="Descripción de la imagen">
-
+        <h1>This Page is Developing <br> Coming SOON...</h1>
         </div>
-
-        
-
     </body>
     </html>

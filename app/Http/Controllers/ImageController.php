@@ -36,6 +36,19 @@ class ImageController extends Controller
         }
         return redirect()->route('photos.index');
     }
+
+    public function destroy(Request $request)
+    {
+        $imagen = Image::findOrFail($request->id);
+        $url = $imagen->url_image;
+        $url = str_replace('storage', 'public', $url);
+        if(Storage::exists($url))
+        {
+            Storage::delete($url);
+        }
+        $imagen->delete();
+        return redirect()->route('photos.index');
+    }
  
 }
 
