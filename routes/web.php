@@ -33,17 +33,18 @@ Route::get('/drop/details/{productId}', [ProductController::class, 'showDetails'
 Route::get('/collection', function () {return view('collection');});
 
 Route::middleware('auth')->group(function () {
-Route::get('/cart', [CartController::class ,'index'])->name('cart');
-Route::post('/cart', [CartController::class ,'store'])->name('cart.store');
-Route::delete('/cart/{product}', [CartController::class ,'destroy'])->name('cart.destroy');
-Route::get('/cart/empty', [CartController::class ,'empty'])->name('cart.empty');
-Route::get('cart/checkout', [CheckoutController::class ,'index'])->name('checkout.index');
+    Route::get('/cart', [CartController::class ,'index'])->name('cart');
+    Route::post('/cart', [CartController::class ,'store'])->name('cart.store');
+    Route::delete('/cart/{product}', [CartController::class ,'destroy'])->name('cart.destroy');
+    Route::get('/cart/empty', [CartController::class ,'empty'])->name('cart.empty');
+    Route::get('cart/checkout', [CheckoutController::class ,'index'])->name('checkout.index');
+    Route::post('cart/checkout', [CheckoutController::class , 'store'])->name('checkout.store');
+
 });
 
 //confirmar pedido
 
 //EN DESARROLLO
-Route::post('cart/checkout', [CheckoutController::class , 'store'])->name('checkout.store');
 
 
 Route::middleware('auth')->group(function () {

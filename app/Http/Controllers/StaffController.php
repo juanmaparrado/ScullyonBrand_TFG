@@ -43,7 +43,6 @@ class StaffController extends Controller
 
         $Staff = Staff::create($request->all());
 
-       
         return redirect()->route('stores.index')->with('success', 'Worker created successfully.');
     }
 }
