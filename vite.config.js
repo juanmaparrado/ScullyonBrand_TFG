@@ -13,6 +13,7 @@ export default defineConfig({
                 'resources/css/details.css',
                 'resources/css/cart.css',
                 'resources/css/checkout.css',
+                'resources/css/reviews.css',
                 'resources/js/app.js',
                 'resources/js/landing.js',
                 'resources/js/photos.js',

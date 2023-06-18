@@ -120,6 +120,10 @@
         <!--heading--->
         <div class="testimonial-heading">
             <span>Reviews</span>
+            <form action="{{route('reviews.create')}}" method="GET">
+                <input type="hidden" name="product_id" value="{{$product->id}}">
+            <button type="submit" class="btn">Add Review</button></a>
+            </form>
         </div>
         <div class="testimonial-box-container">
             @foreach ( $reviews as $review )
@@ -135,7 +139,7 @@
                         </div>
                     </div>
                     <div class="client-comment">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, quaerat quis? Provident temporibus architecto asperiores nobis maiores nisi a. Quae doloribus ipsum aliquam tenetur voluptates incidunt blanditiis sed atque cumque.</p>
+                        <p>{{$review->body}}</p>
                     </div>
                 </div>
             </div>

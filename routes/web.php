@@ -11,10 +11,7 @@ use App\Http\Controllers\ImageController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\StaffController;
-use App\Models\Staff;
-use Spatie\Permission\Models\Permission;
-use Spatie\Permission\Models\Role;
-
+use App\Http\Controllers\ReviewController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -69,6 +66,9 @@ Route::middleware('auth','role:admin')->group(function () {
     Route::get('/photos/create', [ImageController::class, 'create'])->name('photos.create');
     Route::post('/photos', [ImageController::class, 'store'])->name('photos.store');
     Route::post('/photos/destroy', [ImageController::class, 'destroy'])->name('photos.destroy');
+
+    Route::get('/reviews', [ReviewController::class, 'create'])->name('reviews.create');
+    Route::post('/reviews/store', [ReviewController::class, 'store'])->name('reviews.store');
 
     //en desarrollo
     Route::post('staff', [StaffController::class, 'store'])->name('staff.store');

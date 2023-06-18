@@ -1,0 +1,100 @@
+header{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    padding: 33px 9%;
+    box-shadow: 0 0 10px rgba(56, 56, 56, 0.1);
+}
+.logo{
+    width: 100px;
+    height: 40px;
+    object-fit: cover;
+} 
+.nav{
+    display: flex;
+}
+.nav a{
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+}
+.nav li{
+    list-style: none;
+    margin-left: 60px;
+}
+.log{
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+}
+.log a{
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+    font-weight: 500;
+    margin-left: 20px;
+}
+.alert{
+    color: #E28743;
+}
+.nav a:hover{
+    border-bottom: 2px solid #E28743;
+}
+
+.create{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+
+/*************media queries*************/
+
+@media(max-width: 1240px){
+	header{
+        padding: 0;
+        padding-top: 40px;
+        padding-right: 2%;
+    }
+    .nav a{
+        font-weight: 500;
+    }
+    .nav li{
+        margin-left: 18px;
+    }
+
+    #logNav{
+        width: 100px;
+        height: 60px;
+    }
+}
+
+
+@media(max-width: 790px){
+	header{
+        padding: 0;
+        padding-top: 40px;
+        padding-right: 2%;
+    }
+    .log a{
+        font-size: 0.5em;
+    }
+    .nav a{
+        font-size: 0.5em !important; 
+        font-weight: 500 !important;
+    }
+
+    .adminlink{
+        display: none;
+    }
+    #logNav{
+        width: 100px;
+        height: 50px;
+    }
+}
