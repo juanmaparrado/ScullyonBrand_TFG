@@ -29,8 +29,27 @@ Tendremos un control de acceso de usuarios,staff y administradores.Cada una de e
 ## Diseño E/R
 ![Imagen del diseño de la base de datos](https://github.com/juanmaparrado/ScullyonBrand_TFG/blob/main/Modelo%20E-R.png)
 
-##Datos Seeder
-Los datos añadidos en las factorias son pruebas en este momento.
 
-Usuario de prueba : juanma@example.com contraseña: juanma123
+Usuario de prueba admin : juanma@example.com contraseña: juanma123;
+Usuario de prueba staff : anacg@example.com contraseña: 12345678;
+
+
+## Bibliografia
+https://laravel.com/docs/10.x/readme
+https://laravel.com/docs/10.x/starter-kits#laravel-breeze
+https://spatie.be/docs/laravel-permission/v5/introduction
+https://github.com/jeroennoten/Laravel-AdminLTE/
+https://github.com/hardevine/LaravelShoppingcart
+https://dbdiagram.io/home
+https://www.laraveltip.com/
+https://uiverse.io/
+https://fontawesome.com/docs
+https://www.chartjs.org/docs/latest/
+https://animejs.com/documentation/
+https://devdocs.io/
+https://helpx.adobe.com/es/photoshop/user-guide.html
+https://www.youtube.com/watch?v=x2MbZKamYaM
+
+
+
 
