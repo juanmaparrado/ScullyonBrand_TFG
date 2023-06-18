@@ -14,6 +14,7 @@ use App\Models\Product;
 use App\Models\Category;
 use App\Models\Review;
 use App\Models\Image;
+use Faker\Factory;
 
 class DatabaseSeeder extends Seeder
 {
