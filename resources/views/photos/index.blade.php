@@ -11,6 +11,11 @@
 <div class="galeria">
     @foreach ($images as $image)
             <img src="{{asset ($image->url_image)}}" alt="Foto">
+            <form action="{{route('photos.destroy', $image->id)}}" method="POST">
+                @csrf
+                <input type="hidden" name="id" value="{{$image->id}}">
+                <button type="submit" style="border: none; color:red"><i class="fa fa-trash"></i></button>
+            </form>  
     @endforeach
 </div>
 

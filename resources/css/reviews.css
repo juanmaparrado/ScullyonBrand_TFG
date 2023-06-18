@@ -1,12 +1,5 @@
-*{
-	padding: 0;
-	margin: 0;
-	box-sizing: border-box;
-	font-family: 'Space Grotesk', sans-serif;
-	text-decoration: none;
-}
 header{
-    position: sticky;
+    position: fixed;
     top: 0;
     right: 0;
     width: 100%;
@@ -53,72 +46,13 @@ header{
     border-bottom: 2px solid #E28743;
 }
 
-/*************team*************/
+.create{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+}
 
-.team{
-	margin-top: 100px;
-	position: relative;
-	width: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
-}
-.team-content{
-	width: 100%;
-	max-width: 1350px;
-	margin: 0 auto;
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(150px, auto));
-	align-items: center;
-	gap: 2rem;
-	text-align: center;
-	margin-top: 4rem;
-}
-.team-content img{
-	width: 100%;
-	height: auto;
-	border-radius: 15px;
-	margin-bottom: 15px;
-}
-.center h1{
-	font-size: 4rem;
-	text-align: center;
-}
-.box{
-	padding: 16px;
-	background: #695F55;
-	border-radius: 15px;
-	transition: all .38s ease;
-	box-shadow: 10px 10px rgba(0, 0, 0, 0.1);
-}
-.box h3{
-	font-size: 23px;
-	font-weight: 600;
-	color: #fff;
-	margin-bottom: 8px;
-}
-.box h5{
-	font-size: 15px;
-	font-weight: 600;
-	color: #b7b4bb;
-	margin-bottom: 15px;
-	letter-spacing: 2px;
-}
-.icons i{
-	display: inline-block;
-	color: #b7b4bb;
-	font-size: 20px;
-	margin: 0 8px;
-	transition: all .38s ease;
-}
-.icons i:hover{
-	transform: scale(1.2);
-}
-.box:hover{
-	transform: translateY(-10px);
-	cursor: pointer;
-}
 
 /*************media queries*************/
 
@@ -139,13 +73,6 @@ header{
         width: 100px;
         height: 60px;
     }
-	.team{
-		width: 100%;
-		height: auto;
-	}
-	.center h1{
-		font-size: 3rem;
-	}
 }
 
 

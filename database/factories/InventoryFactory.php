@@ -21,11 +21,15 @@ class InventoryFactory extends Factory
     {
         $storeIds = Store::pluck('id');
         $productIds = Product::pluck('id');
-
+        $productId = $this->faker->randomElement($productIds);
+        $product = Product::find($productId);
+        
         return [
+            'product_id' => $productId,
             'store_id' => $this->faker->randomElement($storeIds),
-            'product_id' => $this->faker->randomElement($productIds),
             'status' => $this->faker->randomElement(['available', 'unavailable']),
-            'size' => $this->faker->randomElement(['S', 'M','L','XL']),
-        ];    }
+            'size' => $this->faker->randomElement(['S', 'M', 'L', 'XL']),
+            'stock' => $this->faker->numberBetween(0, $product->stock),
+        ];
+    }
 }

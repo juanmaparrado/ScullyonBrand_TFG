@@ -2,25 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use App\Models\Review;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ReviewController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
-    }
+
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $product = Product::findOrFail(request()->product_id);
+        return view('reviews.create',compact('product'));
     }
 
     /**
@@ -28,7 +25,18 @@ class ReviewController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'product_id' => 'required',
+            'title' => 'required',
+            'body' => 'required',
+        ]);
+        Review::create([
+            'user_id' => Auth::user()->id,
+            'product_id' => $request->product_id,
+            'title' => $request->title,
+            'body' => $request->body,
+        ]);
+        return redirect()->route('drop.details', $request->product_id);
     }
 
     /**

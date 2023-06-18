@@ -32,7 +32,7 @@
                                 <td class="px-6 py-4 whitespace-nowrap">
                                 @if ($product->reviews->count() > 0)
                                 <a href="{{ route('products.reviews', $product->id) }}" class="text-green-500 hover:text-green-600">
-                                    <x-primary-button>Ver reviews</x-primary-button>
+                                    <x-primary-button>Show reviews</x-primary-button>
                                 </a>
                                 </td>
                                 @endif

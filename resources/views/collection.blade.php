@@ -19,7 +19,7 @@
     </head>
     <body class="antialiased">
            
-        <div id="container" class="container-main" >
+        <div id="container" class="container-main" style="position: absolute" >
             @if (Route::has('login'))
             <header>
                 <a href="{{ url('/') }}" class="logo">
@@ -48,9 +48,7 @@
                 </ul>
             </header>
         @endif
-            
+        <h1>This Page is Developing <br> Coming SOON...</h1>
         </div>
-        
-
     </body>
     </html>

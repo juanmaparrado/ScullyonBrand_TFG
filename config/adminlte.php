@@ -91,6 +91,7 @@ return [
             'class' => '',
             'width' => 50,
             'height' => 50,
+            'url'  => '/dashboard',
         ],
     ],
 
@@ -297,18 +298,47 @@ return [
         ['header' => 'SHOP DETAILS'],
         [
             'text' => 'Products',
-            'url'  => '/products',
-            'icon' => 'fa fa-gift',
+            'url'  => '',
+            'icon' => 'fa fa-receipt',
+            'submenu' => [
+                [
+                    'text' => 'All Product',
+                    'url'  => '/products',
+                    'icon' => '',
+                ],
+                [
+                    'text' => 'New Product',
+                    'url'  => '/products/create',
+                    'icon' => '',
+                ]
+            ],
         ],
         [
             'text' => 'Orders',
             'url'  => '/orders',
-            'icon' => 'fa fa-street-view',
+            'icon' => 'fa fa-truck',
         ],
         [
             'text' => 'Stores',
-            'url'  => '/stores',
-            'icon' => 'fa fa-shopping-bag',
+            'url'  => '',
+            'icon' => 'fa fa-store',
+            'submenu' => [
+                [
+                    'text' => 'All Store',
+                    'url'  => '/stores',
+                    'icon' => '',
+                ],
+                [
+                    'text' => 'New Store',
+                    'url'  => '/stores/create',
+                    'icon' => '',
+                ],
+                [
+                    'text' => 'New Worker',
+                    'url'  => '/staff',
+                    'icon' => '',
+                ]
+            ],
         ],
         [
             'text' => 'Categories',
@@ -318,12 +348,42 @@ return [
         [
             'text' => 'Photos',
             'url'  => '/photos',
-            'icon' => 'fa fa-camera',
+            'icon' => 'fa fa-image',
+            'submenu' => [
+                [
+                    'text' => 'All Photo',
+                    'url'  => '/photos',
+                    'icon' => '',
+                ],
+                [
+                    'text' => 'New Photo',
+                    'url'  => '/photos/create',
+                    'icon' => '',
+                ]
+            ],
         ],
         [
-            'text' => 'clients view',
-            'url'  => '/',
-            'icon' => 'fa fa-shopping-cart',
+            'text' => 'Clients',
+            'url'  => '',
+            'icon' => '',
+            'submenu' => [
+                [
+                    'text' => 'Home',
+                    'url'  => '/',
+                    'icon' => '',
+                ],
+                [
+                    'text' => 'Drop',
+                    'url'  => '/drop',
+                    'icon' => '',
+                ],
+                [
+                    'text' => 'The team',
+                    'url'  => '/team',
+                    'icon' => '',
+                ],
+
+            ],
         ]
 
     ],

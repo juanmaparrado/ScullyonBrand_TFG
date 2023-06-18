@@ -41,12 +41,7 @@ class OrderController extends Controller
     {
         // Actualizar un pedido específico por su ID
         $data = $request->validate([
-            'user_id' => 'exists:users,id',
             'status' => 'in:processing,shipping,completed,declined,cancelled',
-            'payment_method' => 'in:credit_card,paypal',
-            'total' => 'numeric',
-            'address' => 'string',
-            'city' => 'string',
         ]);
 
         $order = Order::findOrFail($id);

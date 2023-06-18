@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Staff;
+use App\Models\Store;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class StaffController extends Controller
 {
@@ -12,7 +15,8 @@ class StaffController extends Controller
      */
     public function index()
     {
-        //
+        $stores = Store::all();
+        return view('staff.create' ,compact('stores'));
     }
 
     /**
@@ -20,7 +24,8 @@ class StaffController extends Controller
      */
     public function create()
     {
-        //
+        $stores = Store::all();
+        return view('staff.create' ,compact('stores'));
     }
 
     /**
@@ -28,38 +33,16 @@ class StaffController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        $request->validate([
+            'name' => 'required',
+            'store_id' => 'required',
+            'email' => 'required|email|unique:users',
+            'salary' => 'required|numeric',
+            'bank_account' => 'required',
+        ]);
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Staff $staff)
-    {
-        //
-    }
+        $Staff = Staff::create($request->all());
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Staff $staff)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Staff $staff)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Staff $staff)
-    {
-        //
+        return redirect()->route('stores.index')->with('success', 'Worker created successfully.');
     }
 }

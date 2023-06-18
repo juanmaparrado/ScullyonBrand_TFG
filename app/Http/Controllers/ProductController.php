@@ -29,7 +29,7 @@ class ProductController extends Controller
             'name' => 'required',
             'price' => 'required',
             'stock' => 'required',
-            'url_image' => 'required',
+            'description' => 'required',
             'category_id' => 'required',
         ]);
 
@@ -50,7 +50,7 @@ class ProductController extends Controller
             'name' => 'required',
             'price' => ['required','numeric'],
             'stock' => 'required',
-            'url_image' => 'required',
+            'description' => 'required',
             'category_id' => 'required',
         ]);
 
@@ -92,10 +92,10 @@ class ProductController extends Controller
 
     public function showDetails($productId)
     {
-    $product = Product::findOrFail($productId);
-    $reviews = $product->reviews()->get();
+        $product = Product::findOrFail($productId);
+        $reviews = $product->reviews()->get();
 
-    return view('shop.details', compact('product','reviews'));
+        return view('shop.details', compact('product','reviews'));
     }
 
 }

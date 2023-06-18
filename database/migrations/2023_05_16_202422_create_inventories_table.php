@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
             $table->enum('size',['S','M','L','XL']);
             $table->enum('status', ['available', 'unavailable']);
+            $table->integer('stock')->nullable();
             $table->timestamps();
         });
     }
