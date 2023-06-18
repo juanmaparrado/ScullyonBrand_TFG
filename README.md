@@ -33,6 +33,10 @@ Tendremos un control de acceso de usuarios,staff y administradores.Cada una de e
 Usuario de prueba admin : juanma@example.com contraseña: juanma123;
 Usuario de prueba staff : anacg@example.com contraseña: 12345678;
 
+## ENLACE A LA PRESENTACION
+
+https://www.canva.com/design/DAFmNCHjQBg/8Jyn0NHh7kCNufk51-ceRg/view?utm_content=DAFmNCHjQBg&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink
+
 ## VIDEO 
 Video recorrido por la app.
 https://youtu.be/vtIampCSDro
